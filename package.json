@@ -1,0 +1,20 @@
+{
+  "name": "lifelens-ai",
+  "version": "1.0.0",
+  "description": "LifeLens AI — Multilingual Food Scanner, Ingredient Intelligence & Conversational AI",
+  "scripts": {
+    "start": "python dev.py",
+    "dev": "concurrently -n \"BACKEND,FRONTEND\" -c \"cyan,green\" \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "cd backend && python run.py",
+    "dev:frontend": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "test": "cd backend && python -m pytest",
+    "android": "cd frontend && npx cap open android",
+    "cap:open": "cd frontend && npx cap open android",
+    "cap:sync": "cd frontend && npx cap sync android",
+    "cap:build": "cd frontend && npm run build && npx cap sync android"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

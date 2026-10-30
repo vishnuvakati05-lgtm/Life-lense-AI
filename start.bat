@@ -1,0 +1,3 @@
+@echo off
+echo Starting LifeLens AI (Backend + Frontend)...
+python dev.py

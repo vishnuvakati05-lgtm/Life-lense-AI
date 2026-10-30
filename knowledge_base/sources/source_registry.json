@@ -1,0 +1,43 @@
+[
+  {
+    "id": "fssai_additives_2020",
+    "title": "FSSAI Compendium of Food Safety and Standards (Food Products Standards and Food Additives)",
+    "publisher": "Food Safety and Standards Authority of India (FSSAI)",
+    "url": "https://www.fssai.gov.in",
+    "jurisdiction": "India",
+    "publication_date": "2020",
+    "retrieval_date": "2026-10-29",
+    "topic": "General Food Additives, Colours, Preservatives, Permitted Limits in India"
+  },
+  {
+    "id": "who_jecfa_evals",
+    "title": "JECFA Evaluations of Food Additives and Contaminants Database",
+    "publisher": "Joint FAO/WHO Expert Committee on Food Additives (JECFA)",
+    "url": "https://apps.who.int/food-additives-contaminants-jecfa-database/",
+    "jurisdiction": "International",
+    "publication_date": "2023",
+    "retrieval_date": "2026-10-29",
+    "topic": "Toxicological Assessments, Acceptable Daily Intakes (ADIs)"
+  },
+  {
+    "id": "efsa_food_additives",
+    "title": "EFSA Comprehensive Re-evaluation of Approved Food Additives",
+    "publisher": "European Food Safety Authority (EFSA)",
+    "url": "https://www.efsa.europa.eu",
+    "jurisdiction": "European Union",
+    "publication_date": "2022",
+    "retrieval_date": "2026-10-29",
+    "topic": "Scientific Opinions on Food Additives, Colours, Emulsifiers"
+  },
+  {
+    "id": "fda_cfsan_gras",
+    "title": "US FDA Generally Recognized as Safe (GRAS) Database & Food Additive Status List",
+    "publisher": "US Food and Drug Administration (FDA)",
+    "url": "https://www.fda.gov/food/food-additives-petitions/food-additive-status-list",
+    "jurisdiction": "United States",
+    "publication_date": "2023",
+    "retrieval_date": "2026-10-29",
+    "topic": "US Food Additive Approvals, CFR Title 21"
+  }
+]
+
