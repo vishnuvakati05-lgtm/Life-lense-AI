@@ -363,6 +363,54 @@ export const SmartScanPage: React.FC = () => {
         </div>
       )}
 
+      {/* Sample Label Quick Test helper */}
+      {mode !== 'review' && !isLoading && (
+        <div className="bg-white p-5 rounded-2xl border border-[#E6E7E0] flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs shadow-xs">
+          <div className="flex items-center gap-2 text-[#78837B]">
+            <Sparkles className="w-4 h-4 text-[#174B38] shrink-0" />
+            <span>Don&apos;t have a packaged label nearby? Test instant verification:</span>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {[
+              {
+                name: 'Instant Masala Noodles',
+                ingredients: 'Wheat Flour (Maida), Palm Oil, Salt, Wheat Gluten, Thickener (INS 412), Acidity Regulators [INS 501(i), INS 500(i)], Flavour Enhancer (INS 621), Antioxidant (INS 319).',
+                allergen: 'May contain Milk, Soy, and Mustard.'
+              },
+              {
+                name: 'Choco-Chip Bakery Cookies',
+                ingredients: 'Refined Wheat Flour, Sugar, Edible Vegetable Fat (Palm Oil), Chocolate Chips (Sugar, Cocoa Solids, Emulsifier INS 322), Raising Agents [INS 503(ii), INS 500(ii)], Salt.',
+                allergen: 'Contains Wheat, Milk, and Soy.'
+              },
+              {
+                name: 'Zero-Sugar Citrus Soda',
+                ingredients: 'Carbonated Water, Acidity Regulators (INS 330, INS 331), Sweeteners (INS 955, INS 950), Preservative (INS 211), Synthetic Food Colour (INS 102).',
+                allergen: ''
+              }
+            ].map((sample, idx) => (
+              <button
+                key={idx}
+                type="button"
+                onClick={() => {
+                  setExtractedData({
+                    productName: sample.name,
+                    ingredients: sample.ingredients,
+                    allergenStatement: sample.allergen,
+                    nutritionText: '',
+                    confidence: 96,
+                    warnings: ['Sample packaged formulation loaded for evaluation.'],
+                  });
+                  setMode('review');
+                }}
+                className="px-3 py-1.5 rounded-xl bg-[#F8F8F2] hover:bg-[#EEF8DC] hover:text-[#174B38] border border-[#E6E7E0] font-semibold transition-all cursor-pointer"
+              >
+                {sample.name.split(' ')[0]} {sample.name.split(' ')[1]}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* MODE 1: CAMERA SCANNING VIEWPORT */}
       {mode === 'camera' && !isLoading && (
         <div className="bg-[#0F3527] rounded-3xl overflow-hidden shadow-xl border border-[#E6E7E0] relative flex flex-col items-center justify-center min-h-[460px]">

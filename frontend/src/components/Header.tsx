@@ -66,19 +66,21 @@ export const Header: React.FC = () => {
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-1 bg-white px-2 py-1.5 rounded-2xl border border-[#E6E7E0] shadow-2xs">
+          <nav className="hidden lg:flex items-center gap-1 bg-white/90 backdrop-blur-md px-2.5 py-1.5 rounded-2xl border border-[#E6E7E0] shadow-2xs">
             {navLinks.map((item) => {
               const isActive = location.pathname === item.path;
+              const Icon = item.icon;
               return (
                 <Link
                   key={item.path}
                   to={item.path}
-                  className={`px-3.5 py-2 rounded-xl text-xs font-semibold flex items-center gap-2 transition-all duration-150 ${
+                  className={`px-3 py-1.5 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition-all duration-150 ${
                     isActive
                       ? 'bg-[#EEF8DC] text-[#174B38] font-bold shadow-2xs'
                       : 'text-[#78837B] hover:text-[#202923] hover:bg-[#F8F8F2]'
                   }`}
                 >
+                  <Icon className={`w-3.5 h-3.5 shrink-0 ${isActive ? 'text-[#174B38]' : 'text-[#78837B]'}`} />
                   <span>{item.label}</span>
                 </Link>
               );

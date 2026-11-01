@@ -108,14 +108,36 @@ html.font-xlarge { --base-font-size: 20px; }
   outline-offset: 2px;
 }
 
-/* Subtle Card Hover Lift */
+/* Subtle Card Hover Lift & Glow */
 .card-hover {
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s ease, border-color 0.22s ease;
 }
 .card-hover:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 28px -6px rgba(23, 75, 56, 0.08), 0 4px 10px -2px rgba(23, 75, 56, 0.03);
+  box-shadow: 0 14px 30px -8px rgba(23, 75, 56, 0.1), 0 4px 12px -2px rgba(23, 75, 56, 0.04);
   border-color: #D7EDB2;
+}
+
+/* Glassmorphism Panel */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(230, 231, 224, 0.85);
+}
+
+/* Subtle Floating Animation */
+@keyframes softFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+
+.animate-float {
+  animation: softFloat 4s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: softFloat 4s ease-in-out 2s infinite;
 }
 
 /* Clean Scan Laser */
@@ -127,6 +149,29 @@ html.font-xlarge { --base-font-size: 20px; }
 
 .animate-scan-sweep {
   animation: scanSweep 2.5s ease-in-out infinite;
+}
+
+/* Pulsing radar ring */
+@keyframes radarPulse {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.05); opacity: 0.3; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+.animate-radar {
+  animation: radarPulse 3s ease-in-out infinite;
+}
+
+/* Subtle Shimmer */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(215,237,178,0.3) 50%, rgba(255,255,255,0) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite;
 }
 
 /* Sound wave bars for TTS voice playing */
