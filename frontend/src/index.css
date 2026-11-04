@@ -137,7 +137,13 @@ html.font-xlarge { --base-font-size: 20px; }
   box-shadow: 0 16px 36px -8px rgba(23, 75, 56, 0.12), 0 4px 12px -2px rgba(23, 75, 56, 0.04);
 }
 .shadow-floating {
-  box-shadow: 0 30px 60px -15px rgba(23, 75, 56, 0.2), 0 8px 24px -4px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 30px 60px -15px rgba(23, 75, 56, 0.18), 0 8px 24px -4px rgba(0, 0, 0, 0.06);
+}
+.shadow-device {
+  box-shadow: 
+    0 0 0 1px rgba(23, 75, 56, 0.08),
+    0 30px 60px -15px rgba(23, 75, 56, 0.25),
+    0 10px 25px -5px rgba(0, 0, 0, 0.12);
 }
 
 /* Card Hover Lift & Glow */
@@ -145,24 +151,37 @@ html.font-xlarge { --base-font-size: 20px; }
   transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.24s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
 }
 .card-hover:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 18px 38px -8px rgba(23, 75, 56, 0.12), 0 4px 12px -2px rgba(23, 75, 56, 0.05);
-  border-color: #D7EDB2;
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -10px rgba(23, 75, 56, 0.14), 0 6px 16px -2px rgba(23, 75, 56, 0.06);
+  border-color: #64A77A;
 }
 
 /* Glassmorphism Panel */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.88);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(230, 231, 224, 0.9);
 }
 
-.glass-panel-dark {
-  background: rgba(14, 51, 38, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(215, 237, 178, 0.2);
+.glass-badge {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(230, 231, 224, 0.95);
+  box-shadow: 0 10px 25px -5px rgba(23, 75, 56, 0.1), 0 4px 10px -2px rgba(0, 0, 0, 0.04);
+}
+
+/* Editorial Gradient Text */
+.text-gradient-forest {
+  background: linear-gradient(135deg, #174B38 0%, #22634C 50%, #4D8F67 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Ambient Radial Glow */
+.hero-glow {
+  background: radial-gradient(circle at 50% 0%, rgba(215, 237, 178, 0.35) 0%, rgba(100, 167, 122, 0.12) 40%, transparent 70%);
 }
 
 /* Clean Scan Laser */
@@ -179,14 +198,14 @@ html.font-xlarge { --base-font-size: 20px; }
 /* Floating Animation */
 @keyframes softFloat {
   0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-6px); }
+  50% { transform: translateY(-7px); }
 }
 
 .animate-float {
-  animation: softFloat 4s ease-in-out infinite;
+  animation: softFloat 4.5s ease-in-out infinite;
 }
 .animate-float-delayed {
-  animation: softFloat 4s ease-in-out 2s infinite;
+  animation: softFloat 5s ease-in-out 2s infinite;
 }
 
 /* Sound wave bars for TTS voice playing */
@@ -285,13 +304,14 @@ html.font-xlarge { --base-font-size: 20px; }
    ========================================================================== */
 .iphone-frame {
   position: relative;
-  background: #081811;
+  background: #11221A;
   border-radius: 3.2rem;
   box-shadow: 
-    0 0 0 1px rgba(255, 255, 255, 0.15),
-    0 25px 65px -12px rgba(0, 0, 0, 0.55),
-    0 10px 20px -5px rgba(23, 75, 56, 0.3);
+    0 0 0 1px rgba(23, 75, 56, 0.15),
+    0 25px 65px -12px rgba(23, 75, 56, 0.3),
+    0 10px 25px -5px rgba(0, 0, 0, 0.15);
   padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .iphone-inner {
@@ -303,14 +323,14 @@ html.font-xlarge { --base-font-size: 20px; }
 }
 
 .iphone-island {
-  width: 96px;
-  height: 22px;
+  width: 90px;
+  height: 20px;
   background: #000000;
   border-radius: 9999px;
   margin: 6px auto 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 12px;
+  padding: 0 10px;
   box-shadow: inset 0 0 4px rgba(255, 255, 255, 0.15);
 }

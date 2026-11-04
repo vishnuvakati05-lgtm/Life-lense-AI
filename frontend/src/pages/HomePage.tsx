@@ -211,73 +211,117 @@ export const HomePage: React.FC = () => {
   ];
 
   return (
-    <div className="space-y-16 sm:space-y-24 pb-20 animate-fade-in max-w-7xl mx-auto">
+    <div className="space-y-20 sm:space-y-28 pb-20 animate-fade-in max-w-7xl mx-auto">
       
       {/* ==========================================================================
-          HERO SECTION — EDITORIAL ELEGANCE & SOPHISTICATED PRODUCT DEMONSTRATION
+          HERO SECTION — EDITORIAL ELEGANCE & SOPHISTICATED PRODUCT SHOWCASE
+          Apple-level simplicity, luminous typography, and 3D device showcase
           ========================================================================== */}
-      <section className="relative overflow-hidden rounded-3xl sm:rounded-[2.5rem] bg-gradient-to-br from-[#123D2E] via-[#174B38] to-[#0E3326] text-white p-6 sm:p-10 lg:p-14 shadow-floating border border-[#266850]">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
+      <section className="relative pt-6 sm:pt-10 lg:pt-16 pb-12 sm:pb-20 overflow-hidden">
+        
+        {/* Subtle Ambient Radial Glow */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] hero-glow pointer-events-none -z-10" />
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
           {/* Left Column: Heading, Subtitle & CTAs */}
-          <div className="lg:col-span-7 space-y-6">
-            <div className="inline-flex items-center gap-2 bg-[#EEF8DC]/15 backdrop-blur-md px-4 py-1.5 rounded-full text-xs font-bold text-[#D7EDB2] border border-[#D7EDB2]/25 shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-[#D7EDB2] animate-pulse" />
-              <span>Multilingual Food Intelligence Platform</span>
+          <div className="lg:col-span-7 space-y-6 sm:space-y-8 text-center sm:text-left">
+            
+            {/* Pill Badge */}
+            <div className="inline-flex items-center gap-2 bg-[#EEF8DC] px-4 py-1.5 rounded-full text-xs font-bold text-[#174B38] border border-[#D7EDB2] shadow-xs">
+              <span className="w-2 h-2 rounded-full bg-[#174B38] animate-pulse" />
+              <span>Multilingual AI Food Intelligence • Zero Hallucinations</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-[3.5rem] font-extrabold tracking-tight leading-[1.08] text-white">
+            {/* Main Headline */}
+            <h1 className="text-4xl sm:text-6xl lg:text-[4.2rem] font-extrabold tracking-[-0.035em] leading-[1.08] text-[#174B38]">
               Know What&apos;s Inside.<br />
-              <span className="text-[#D7EDB2] font-black">
+              <span className="text-gradient-forest font-black">
                 Make Smarter Food Choices.
               </span>
             </h1>
 
-            <p className="text-sm sm:text-base text-[#D7EDB2]/90 leading-relaxed max-w-xl font-normal">
-              Scan any food package, understand its ingredients and discover what goes into the food you eat — in <strong>English</strong>, <strong>हिन्दी</strong>, and <strong>తెలుగు</strong>.
+            {/* Supporting Text */}
+            <p className="text-base sm:text-xl text-[#6E7972] max-w-2xl font-normal leading-relaxed mx-auto sm:mx-0">
+              Scan any food package, understand hidden additives, verify allergens with zero AI hallucinations, and decode what you eat — in <strong>English</strong>, <strong>हिन्दी</strong>, and <strong>తెలుగు</strong>.
             </p>
 
             {/* Action Buttons */}
-            <div className="flex flex-wrap items-center gap-4 pt-2">
+            <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 pt-2">
               <button
                 onClick={() => navigate('/scan')}
-                className="bg-[#D7EDB2] hover:bg-white text-[#174B38] font-extrabold text-sm px-8 py-4 rounded-2xl shadow-[0_4px_20px_rgba(215,237,178,0.35)] hover:shadow-[0_8px_28px_rgba(215,237,178,0.5)] transition-all duration-200 active:scale-95 cursor-pointer flex items-center gap-2.5"
+                className="btn-primary !text-base !px-8 !py-4 !rounded-2xl shadow-floating cursor-pointer flex items-center gap-3 group"
               >
-                <Camera className="w-5 h-5 shrink-0 text-[#174B38]" />
+                <Camera className="w-5 h-5 text-[#D7EDB2]" />
                 <span>Start Scanning</span>
+                <ArrowRight className="w-4 h-4 text-[#D7EDB2] transition-transform duration-200 group-hover:translate-x-1" />
               </button>
 
               <button
                 onClick={() => navigate('/explore')}
-                className="bg-white/10 hover:bg-white/20 text-white font-bold text-sm px-7 py-4 rounded-2xl border border-white/20 transition-all duration-200 backdrop-blur-md flex items-center gap-2.5 cursor-pointer active:scale-95"
+                className="btn-secondary !text-base !px-7 !py-4 !rounded-2xl shadow-xs cursor-pointer flex items-center gap-2.5"
               >
-                <BookOpen className="w-4 h-4 text-[#D7EDB2] shrink-0" />
+                <BookOpen className="w-4 h-4 text-[#174B38]" />
                 <span>Explore Ingredients</span>
               </button>
             </div>
 
             {/* Trust Badges */}
-            <div className="flex flex-wrap gap-x-6 gap-y-2 pt-3 text-xs text-[#D7EDB2]/80 font-medium">
+            <div className="flex flex-wrap items-center justify-center sm:justify-start gap-x-6 gap-y-2 pt-2 text-xs text-[#6E7972] font-semibold">
               <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-[#D7EDB2] shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-[#174B38] shrink-0" />
                 FSSAI & Codex Aligned
               </span>
               <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-[#D7EDB2] shrink-0" />
-                Zero AI Hallucinations
+                <CheckCircle2 className="w-4 h-4 text-[#174B38] shrink-0" />
+                100% Deterministic Regex
               </span>
               <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-[#D7EDB2] shrink-0" />
-                100% Offline Core Logic
+                <CheckCircle2 className="w-4 h-4 text-[#174B38] shrink-0" />
+                Zero AI Hallucinations
               </span>
             </div>
           </div>
 
-          {/* Right Column: Realistic Smartphone Product Scanner Demo with Interactive Views */}
-          <div className="lg:col-span-5 relative flex justify-center py-2">
+          {/* Right Column: Centerpiece 3D Elevated Smartphone Showcase */}
+          <div className="lg:col-span-5 relative flex justify-center py-6">
             
-            {/* Phone Chassis */}
-            <div className="relative w-full max-w-[315px] iphone-frame text-[#1D2620]">
+            {/* Ambient Background Aura */}
+            <div className="absolute inset-0 bg-[#D7EDB2]/20 rounded-full blur-3xl pointer-events-none" />
+
+            {/* Floating Glassmorphic HUD Badges Around the Device */}
+            <div className="absolute -top-4 -left-6 z-20 hidden sm:flex items-center gap-2 glass-badge px-3.5 py-2 rounded-2xl animate-float">
+              <div className="w-6 h-6 rounded-lg bg-[#EEF8DC] text-[#174B38] flex items-center justify-center">
+                <Sparkles className="w-3.5 h-3.5" />
+              </div>
+              <div className="text-left">
+                <span className="text-[9px] uppercase tracking-wider font-bold text-[#6E7972] block">Additive Isolated</span>
+                <span className="text-xs font-bold text-[#174B38]">INS 621 • Umami</span>
+              </div>
+            </div>
+
+            <div className="absolute top-24 -right-8 z-20 hidden sm:flex items-center gap-2 glass-badge px-3.5 py-2 rounded-2xl animate-float-delayed">
+              <div className="w-6 h-6 rounded-lg bg-[#EEF8DC] text-[#174B38] flex items-center justify-center">
+                <ShieldCheck className="w-3.5 h-3.5" />
+              </div>
+              <div className="text-left">
+                <span className="text-[9px] uppercase tracking-wider font-bold text-[#6E7972] block">Verification</span>
+                <span className="text-xs font-bold text-[#174B38]">OCR: 98.4% Accuracy</span>
+              </div>
+            </div>
+
+            <div className="absolute -bottom-4 -left-8 z-20 hidden sm:flex items-center gap-2 glass-badge px-3.5 py-2 rounded-2xl animate-float-delayed">
+              <div className="w-6 h-6 rounded-lg bg-[#FDF3F2] text-[#D95C55] flex items-center justify-center">
+                <AlertTriangle className="w-3.5 h-3.5" />
+              </div>
+              <div className="text-left">
+                <span className="text-[9px] uppercase tracking-wider font-bold text-[#9B2C26] block">Allergen Shield</span>
+                <span className="text-xs font-bold text-[#9B2C26]">Wheat & Soy Flagged</span>
+              </div>
+            </div>
+
+            {/* The Apple-grade Smartphone Chassis */}
+            <div className="relative w-full max-w-[315px] iphone-frame z-10 shadow-device">
               
               {/* Dynamic Island */}
               <div className="iphone-island">
@@ -393,7 +437,7 @@ export const HomePage: React.FC = () => {
                       {activeMock.allergen_statement ? (
                         <div className="p-2 bg-[#FDF3F2] rounded-xl border border-[#F8CAC7] flex items-center justify-between gap-1 shadow-2xs">
                           <div className="flex items-center gap-1 text-[10px] font-bold text-[#9B2C26]">
-                            <AlertTriangle className="w-3 h-3 text-[#D95C55] shrink-0" />
+                            <AlertTriangle className="w-3.5 h-3.5 text-[#D95C55] shrink-0" />
                             <span className="truncate max-w-[160px]">{activeMock.allergen_statement}</span>
                           </div>
                           <span className="text-[7px] font-black uppercase text-[#9B2C26] bg-white px-1 py-0.2 rounded border border-[#F8CAC7]">
@@ -402,7 +446,7 @@ export const HomePage: React.FC = () => {
                         </div>
                       ) : (
                         <div className="p-2 bg-[#EEF8DC] rounded-xl border border-[#D7EDB2] flex items-center gap-1 text-[10px] font-bold text-[#174B38] shadow-2xs">
-                          <CheckCircle2 className="w-3 h-3 text-[#174B38] shrink-0" />
+                          <CheckCircle2 className="w-3.5 h-3.5 text-[#174B38] shrink-0" />
                           <span>No allergen flags matched</span>
                         </div>
                       )}
@@ -450,9 +494,6 @@ export const HomePage: React.FC = () => {
             </div>
           </div>
         </div>
-
-        {/* Ambient Subtle Glow */}
-        <div className="absolute -right-24 -bottom-24 w-96 h-96 bg-[#D7EDB2]/10 rounded-full blur-3xl pointer-events-none" />
       </section>
 
       {/* ==========================================================================
