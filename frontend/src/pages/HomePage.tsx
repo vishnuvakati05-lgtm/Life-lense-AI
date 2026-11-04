@@ -34,7 +34,8 @@ export const HomePage: React.FC = () => {
   const sampleProducts = [
     {
       name: 'Instant Masala Noodles',
-      category: 'Savory Noodle Pack',
+      category: 'Savory Noodles',
+      icon: '🍜',
       calories: '427 kcal',
       sodium: '1020 mg',
       additivesCount: '4 Additives',
@@ -55,6 +56,7 @@ export const HomePage: React.FC = () => {
     {
       name: 'Choco-Chip Bakery Cookies',
       category: 'Sweet Biscuit',
+      icon: '🍪',
       calories: '495 kcal',
       sodium: '290 mg',
       additivesCount: '3 Additives',
@@ -74,7 +76,8 @@ export const HomePage: React.FC = () => {
     },
     {
       name: 'Zero-Sugar Citrus Soda',
-      category: 'Carbonated Beverage',
+      category: 'Carbonated Soda',
+      icon: '🥤',
       calories: '1 kcal',
       sodium: '45 mg',
       additivesCount: '5 Additives',
@@ -271,10 +274,10 @@ export const HomePage: React.FC = () => {
           </div>
 
           {/* Right Column: Realistic Smartphone Product Scanner Demo with Interactive Views */}
-          <div className="lg:col-span-5 relative flex justify-center py-4">
+          <div className="lg:col-span-5 relative flex justify-center py-2">
             
             {/* Phone Chassis */}
-            <div className="relative w-full max-w-[340px] iphone-frame text-[#1D2620]">
+            <div className="relative w-full max-w-[315px] iphone-frame text-[#1D2620]">
               
               {/* Dynamic Island */}
               <div className="iphone-island">
@@ -283,10 +286,10 @@ export const HomePage: React.FC = () => {
               </div>
 
               {/* Inner Smartphone Screen */}
-              <div className="iphone-inner p-4 space-y-3">
+              <div className="iphone-inner p-3.5 space-y-2.5">
                 
                 {/* Simulated iOS Status Bar */}
-                <div className="flex items-center justify-between text-[11px] font-bold text-[#1D2620] px-2 pt-0.5">
+                <div className="flex items-center justify-between text-[11px] font-bold text-[#1D2620] px-1.5">
                   <span>9:41</span>
                   <div className="flex items-center gap-1.5 text-[10px]">
                     <span className="font-mono text-[9px] bg-[#EEF8DC] text-[#174B38] px-1.5 py-0.5 rounded font-bold">5G</span>
@@ -298,10 +301,10 @@ export const HomePage: React.FC = () => {
 
                 {/* Viewfinder / Dossier Mode Switcher */}
                 <div className="flex items-center justify-between pb-1 border-b border-[#E6E7E0]">
-                  <div className="flex items-center gap-1 bg-white p-1 rounded-xl border border-[#E6E7E0] text-[10px]">
+                  <div className="flex items-center gap-1 bg-white p-0.5 rounded-xl border border-[#E6E7E0] text-[10px]">
                     <button
                       onClick={() => setPhoneTab('scan')}
-                      className={`px-3 py-1 rounded-lg font-bold transition-all cursor-pointer ${
+                      className={`px-2.5 py-1 rounded-lg font-bold transition-all cursor-pointer ${
                         phoneTab === 'scan' ? 'bg-[#174B38] text-white shadow-2xs' : 'text-[#6E7972]'
                       }`}
                     >
@@ -309,14 +312,14 @@ export const HomePage: React.FC = () => {
                     </button>
                     <button
                       onClick={() => setPhoneTab('analysis')}
-                      className={`px-3 py-1 rounded-lg font-bold transition-all cursor-pointer ${
+                      className={`px-2.5 py-1 rounded-lg font-bold transition-all cursor-pointer ${
                         phoneTab === 'analysis' ? 'bg-[#174B38] text-white shadow-2xs' : 'text-[#6E7972]'
                       }`}
                     >
                       Dossier
                     </button>
                   </div>
-                  <span className="text-[10px] font-mono bg-[#EEF8DC] text-[#174B38] font-bold px-2.5 py-0.5 rounded-full border border-[#D7EDB2]">
+                  <span className="text-[10px] font-mono bg-[#EEF8DC] text-[#174B38] font-bold px-2 py-0.5 rounded-full border border-[#D7EDB2]">
                     OCR: 98%
                   </span>
                 </div>
@@ -324,15 +327,15 @@ export const HomePage: React.FC = () => {
                 {phoneTab === 'scan' ? (
                   <>
                     {/* Viewfinder Area */}
-                    <div className="relative bg-white rounded-2xl p-4 border border-[#E6E7E0] overflow-hidden min-h-[190px] flex flex-col justify-between shadow-2xs">
+                    <div className="relative bg-white rounded-2xl p-3 border border-[#E6E7E0] overflow-hidden min-h-[175px] flex flex-col justify-between shadow-2xs">
                       {/* Laser scan line */}
                       <div className="absolute left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#64A77A] to-transparent shadow-[0_0_8px_#64A77A] animate-scan-sweep" />
 
                       {/* Camera Corner Brackets */}
-                      <div className="absolute top-2 left-2 w-3.5 h-3.5 border-t-2 border-l-2 border-[#174B38]" />
-                      <div className="absolute top-2 right-2 w-3.5 h-3.5 border-t-2 border-r-2 border-[#174B38]" />
-                      <div className="absolute bottom-2 left-2 w-3.5 h-3.5 border-b-2 border-l-2 border-[#174B38]" />
-                      <div className="absolute bottom-2 right-2 w-3.5 h-3.5 border-b-2 border-r-2 border-[#174B38]" />
+                      <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-[#174B38]" />
+                      <div className="absolute top-2 right-2 w-3 h-3 border-t-2 border-r-2 border-[#174B38]" />
+                      <div className="absolute bottom-2 left-2 w-3 h-3 border-b-2 border-l-2 border-[#174B38]" />
+                      <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-[#174B38]" />
 
                       {/* Packaging header inside camera */}
                       <div className="space-y-1">
@@ -340,47 +343,47 @@ export const HomePage: React.FC = () => {
                           <span className="text-[9px] font-bold uppercase tracking-wider text-[#174B38] bg-[#EEF8DC] px-2 py-0.5 rounded-md">
                             {activeMock.category}
                           </span>
-                          <div className="flex gap-1.5">
+                          <div className="flex gap-1">
                             {sampleProducts.map((_, i) => (
                               <button
                                 key={i}
                                 onClick={() => setActiveMockIndex(i)}
                                 className={`w-2 h-2 rounded-full transition-all cursor-pointer ${
-                                  i === activeMockIndex ? 'bg-[#174B38] w-4' : 'bg-[#D4D6CB]'
+                                  i === activeMockIndex ? 'bg-[#174B38] w-3.5' : 'bg-[#D4D6CB]'
                                 }`}
                                 title={`Sample ${i + 1}`}
                               />
                             ))}
                           </div>
                         </div>
-                        <h4 className="font-extrabold text-sm text-[#1D2620] mt-1">
+                        <h4 className="font-extrabold text-xs text-[#1D2620]">
                           {activeMock.name}
                         </h4>
-                        <p className="text-[10px] text-[#6E7972] font-mono leading-relaxed line-clamp-2 bg-[#F8F8F2] p-2 rounded-xl border border-[#E6E7E0]">
+                        <p className="text-[9px] text-[#6E7972] font-mono leading-relaxed line-clamp-2 bg-[#F8F8F2] p-1.5 rounded-lg border border-[#E6E7E0]">
                           {activeMock.ingredients}
                         </p>
                       </div>
 
                       {/* Live OCR detection chip */}
-                      <div className="pt-2 flex items-center justify-between text-[10px]">
-                        <span className="text-[#174B38] font-bold flex items-center gap-1">
-                          <ScanLine className="w-3.5 h-3.5 text-[#174B38]" />
+                      <div className="pt-1.5 flex items-center justify-between text-[10px]">
+                        <span className="text-[#174B38] font-bold flex items-center gap-1 text-[9px]">
+                          <ScanLine className="w-3 h-3 text-[#174B38]" />
                           <span>4 INS codes extracted</span>
                         </span>
-                        <span className="text-[#6E7972] text-[9px]">Tap dots to switch</span>
+                        <span className="text-[#6E7972] text-[8px]">Tap dots</span>
                       </div>
                     </div>
 
                     {/* Floating Badges */}
-                    <div className="space-y-2">
-                      <div className="p-2.5 bg-white rounded-2xl border border-[#E6E7E0] flex items-center justify-between shadow-2xs">
-                        <div className="flex items-center gap-1.5 text-[11px] font-bold text-[#1D2620]">
-                          <ShieldCheck className="w-4 h-4 text-[#174B38] shrink-0" />
+                    <div className="space-y-1.5">
+                      <div className="p-2 bg-white rounded-xl border border-[#E6E7E0] flex items-center justify-between shadow-2xs">
+                        <div className="flex items-center gap-1.5 text-[10px] font-bold text-[#1D2620]">
+                          <ShieldCheck className="w-3.5 h-3.5 text-[#174B38] shrink-0" />
                           <span>Additives Isolated</span>
                         </div>
                         <div className="flex gap-1">
                           {activeMock.highlightAdditives.slice(0, 2).map((a, i) => (
-                            <span key={i} className="bg-[#EEF8DC] text-[#174B38] text-[9px] font-bold px-2 py-0.5 rounded-md border border-[#D7EDB2]">
+                            <span key={i} className="bg-[#EEF8DC] text-[#174B38] text-[8px] font-bold px-1.5 py-0.5 rounded border border-[#D7EDB2]">
                               {a.split(' ')[0]}
                             </span>
                           ))}
@@ -388,18 +391,18 @@ export const HomePage: React.FC = () => {
                       </div>
 
                       {activeMock.allergen_statement ? (
-                        <div className="p-2.5 bg-[#FDF3F2] rounded-2xl border border-[#F8CAC7] flex items-center justify-between gap-2 shadow-2xs">
-                          <div className="flex items-center gap-1.5 text-[11px] font-bold text-[#9B2C26]">
-                            <AlertTriangle className="w-3.5 h-3.5 text-[#D95C55] shrink-0" />
-                            <span className="truncate max-w-[180px]">{activeMock.allergen_statement}</span>
+                        <div className="p-2 bg-[#FDF3F2] rounded-xl border border-[#F8CAC7] flex items-center justify-between gap-1 shadow-2xs">
+                          <div className="flex items-center gap-1 text-[10px] font-bold text-[#9B2C26]">
+                            <AlertTriangle className="w-3 h-3 text-[#D95C55] shrink-0" />
+                            <span className="truncate max-w-[160px]">{activeMock.allergen_statement}</span>
                           </div>
-                          <span className="text-[8px] font-black uppercase text-[#9B2C26] bg-white px-1.5 py-0.5 rounded border border-[#F8CAC7]">
+                          <span className="text-[7px] font-black uppercase text-[#9B2C26] bg-white px-1 py-0.2 rounded border border-[#F8CAC7]">
                             Flagged
                           </span>
                         </div>
                       ) : (
-                        <div className="p-2.5 bg-[#EEF8DC] rounded-2xl border border-[#D7EDB2] flex items-center gap-1.5 text-[11px] font-bold text-[#174B38] shadow-2xs">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-[#174B38] shrink-0" />
+                        <div className="p-2 bg-[#EEF8DC] rounded-xl border border-[#D7EDB2] flex items-center gap-1 text-[10px] font-bold text-[#174B38] shadow-2xs">
+                          <CheckCircle2 className="w-3 h-3 text-[#174B38] shrink-0" />
                           <span>No allergen flags matched</span>
                         </div>
                       )}
@@ -408,26 +411,26 @@ export const HomePage: React.FC = () => {
                 ) : (
                   <>
                     {/* Safety Dossier Mode */}
-                    <div className="space-y-2.5 bg-white p-3.5 rounded-2xl border border-[#E6E7E0] shadow-2xs">
-                      <div className="flex items-center justify-between border-b border-[#E6E7E0] pb-2">
-                        <span className="text-[10px] font-bold text-[#6E7972] uppercase tracking-wider">
+                    <div className="space-y-2 bg-white p-3 rounded-xl border border-[#E6E7E0] shadow-2xs">
+                      <div className="flex items-center justify-between border-b border-[#E6E7E0] pb-1.5">
+                        <span className="text-[9px] font-bold text-[#6E7972] uppercase tracking-wider">
                           Additive Dossier
                         </span>
-                        <span className="text-[9px] font-bold text-[#174B38] bg-[#EEF8DC] px-2 py-0.5 rounded-md">
+                        <span className="text-[8px] font-bold text-[#174B38] bg-[#EEF8DC] px-1.5 py-0.5 rounded">
                           Codex & FSSAI Aligned
                         </span>
                       </div>
 
-                      <div className="space-y-1.5">
-                        {activeMock.highlightAdditives.map((add, idx) => (
-                          <div key={idx} className="p-2 rounded-xl bg-[#F8F8F2] border border-[#E6E7E0] text-[10px] flex items-center justify-between">
+                      <div className="space-y-1">
+                        {activeMock.highlightAdditives.slice(0, 3).map((add, idx) => (
+                          <div key={idx} className="p-1.5 rounded-lg bg-[#F8F8F2] border border-[#E6E7E0] text-[9px] flex items-center justify-between">
                             <span className="font-bold text-[#1D2620]">{add}</span>
-                            <span className="text-[9px] text-[#6E7972]">Verified Code</span>
+                            <span className="text-[8px] text-[#6E7972]">Verified</span>
                           </div>
                         ))}
                       </div>
 
-                      <div className="p-2 bg-[#F8F8F2] rounded-xl border border-[#E6E7E0] text-[10px] flex items-center justify-between">
+                      <div className="p-1.5 bg-[#F8F8F2] rounded-lg border border-[#E6E7E0] text-[9px] flex items-center justify-between">
                         <span className="text-[#6E7972]">Calorie Density</span>
                         <strong className="text-[#174B38] font-bold">{activeMock.calories}</strong>
                       </div>
@@ -438,10 +441,10 @@ export const HomePage: React.FC = () => {
                 {/* Primary Button Inside Phone */}
                 <button
                   onClick={() => handleTestSample(activeMock)}
-                  className="w-full py-3 bg-[#174B38] hover:bg-[#0E3326] text-white text-xs font-bold rounded-xl flex items-center justify-center gap-2 transition-all shadow-md active:scale-95 cursor-pointer"
+                  className="w-full py-2.5 bg-[#174B38] hover:bg-[#0E3326] text-white text-[11px] font-bold rounded-xl flex items-center justify-center gap-1.5 transition-all shadow-md active:scale-95 cursor-pointer"
                 >
-                  <span>Evaluate Full Formulation</span>
-                  <ArrowRight className="w-3.5 h-3.5 text-[#D7EDB2]" />
+                  <span>Evaluate Formulation</span>
+                  <ArrowRight className="w-3 h-3 text-[#D7EDB2]" />
                 </button>
               </div>
             </div>
@@ -475,12 +478,13 @@ export const HomePage: React.FC = () => {
           {sampleProducts.map((p, idx) => (
             <div
               key={idx}
-              className="bg-white p-6 sm:p-7 rounded-3xl border border-[#E6E7E0] card-hover flex flex-col justify-between space-y-6 shadow-soft"
+              className="bg-white p-6 sm:p-7 rounded-3xl border border-[#E6E7E0] card-hover flex flex-col justify-between space-y-5 shadow-soft hover:border-[#64A77A]/60"
             >
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className={`text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full border ${p.badgeColor}`}>
-                    {p.category}
+                  <span className={`text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full border ${p.badgeColor} flex items-center gap-1.5`}>
+                    <span>{p.icon}</span>
+                    <span>{p.category}</span>
                   </span>
                   <span className="text-xs font-bold text-[#174B38] bg-[#EEF8DC] px-2.5 py-1 rounded-lg border border-[#D7EDB2]">
                     {p.additivesCount}
@@ -507,26 +511,26 @@ export const HomePage: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Nutrition Row */}
-                <div className="flex items-center gap-3 text-xs text-[#6E7972] pt-3 border-t border-[#E6E7E0]">
-                  <span className="flex items-center gap-1">
+                {/* Nutrition Stat Row */}
+                <div className="grid grid-cols-2 gap-2 bg-[#F8F8F2] p-2.5 rounded-xl border border-[#E6E7E0] text-center text-xs">
+                  <div className="flex items-center justify-center gap-1.5">
                     <Flame className="w-3.5 h-3.5 text-[#E5A33A]" />
-                    <strong className="text-[#1D2620]">{p.calories}</strong>
-                  </span>
-                  <span className="text-[#E6E7E0]">•</span>
-                  <span className="flex items-center gap-1">
+                    <span className="font-bold text-[#1D2620]">{p.calories}</span>
+                  </div>
+                  <div className="border-l border-[#E6E7E0] flex items-center justify-center gap-1.5">
                     <Activity className="w-3.5 h-3.5 text-[#174B38]" />
-                    <strong className="text-[#1D2620]">{p.sodium}</strong> sodium
-                  </span>
+                    <span className="font-bold text-[#1D2620]">{p.sodium}</span>
+                  </div>
                 </div>
               </div>
 
+              {/* Elevated Action Button: Soft Lime Tint with Deep Forest Green Hover */}
               <button
                 onClick={() => handleTestSample(p)}
-                className="w-full py-3.5 px-4 bg-[#174B38] hover:bg-[#0E3326] text-white text-xs font-bold rounded-2xl flex items-center justify-center gap-2 transition-all duration-200 active:scale-98 shadow-sm hover:shadow-md cursor-pointer group"
+                className="w-full py-3 px-4 bg-[#EEF8DC] hover:bg-[#174B38] text-[#174B38] hover:text-[#D7EDB2] border border-[#D7EDB2] hover:border-[#174B38] text-xs font-bold rounded-2xl flex items-center justify-center gap-2 transition-all duration-200 shadow-xs hover:shadow-md cursor-pointer group active:scale-98 mt-2"
               >
-                <span>Run Formulation Analysis</span>
-                <ArrowRight className="w-4 h-4 text-[#D7EDB2] transition-transform duration-200 group-hover:translate-x-1" />
+                <span>Evaluate Formulation</span>
+                <ArrowRight className="w-4 h-4 text-[#174B38] group-hover:text-[#D7EDB2] transition-transform duration-200 group-hover:translate-x-1" />
               </button>
             </div>
           ))}
@@ -574,7 +578,7 @@ export const HomePage: React.FC = () => {
         {(() => {
           const current = decrypterAdditives[selectedDecrypter];
           return (
-            <div className="bg-white p-6 sm:p-8 rounded-3xl border border-[#E6E7E0] space-y-6 shadow-2xs">
+            <div className="bg-[#FAFBF6] p-6 sm:p-8 rounded-3xl border border-[#E6E7E0] space-y-6 shadow-2xs">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#E6E7E0] pb-4">
                 <div>
                   <div className="flex items-center gap-2">
@@ -595,7 +599,7 @@ export const HomePage: React.FC = () => {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-                <div className="bg-[#F8F8F2] p-5 rounded-2xl border border-[#E6E7E0] space-y-1.5">
+                <div className="bg-white p-5 rounded-2xl border border-[#E6E7E0] space-y-1.5 shadow-2xs">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-[#174B38] block">
                     Why Manufacturers Add It:
                   </span>
@@ -604,7 +608,7 @@ export const HomePage: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="bg-[#F8F8F2] p-5 rounded-2xl border border-[#E6E7E0] space-y-1.5">
+                <div className="bg-white p-5 rounded-2xl border border-[#E6E7E0] space-y-1.5 shadow-2xs">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-[#174B38] block">
                     Global Safety Consensus:
                   </span>
@@ -613,7 +617,7 @@ export const HomePage: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="bg-[#F8F8F2] p-5 rounded-2xl border border-[#E6E7E0] space-y-1.5">
+                <div className="bg-white p-5 rounded-2xl border border-[#E6E7E0] space-y-1.5 shadow-2xs">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-[#6E7972] block">
                     Common Food Categories:
                   </span>
@@ -622,7 +626,7 @@ export const HomePage: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="bg-[#EEF8DC] p-5 rounded-2xl border border-[#D7EDB2] space-y-1.5">
+                <div className="bg-[#EEF8DC] p-5 rounded-2xl border border-[#D7EDB2] space-y-1.5 shadow-2xs">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-[#174B38] block">
                     Whole-Food Clean Alternative:
                   </span>

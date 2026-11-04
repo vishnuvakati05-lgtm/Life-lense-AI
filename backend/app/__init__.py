@@ -1,5 +1,5 @@
 import os
-from flask import Flask
+from flask import Flask, redirect, jsonify, request
 from flask_cors import CORS
 from app.config import Config
 from app.models import init_db
@@ -19,6 +19,37 @@ def create_app():
 
     # Initialize database
     init_db()
+
+    # Register root routes
+    @app.route('/')
+    def root():
+        """Root route: Redirect browsers to the Vite frontend (port 5173), or return API info."""
+        accept_header = request.headers.get('Accept', '')
+        if 'text/html' in accept_header:
+            return redirect("http://localhost:5173", code=302)
+        return jsonify({
+            "service": "LifeLens AI Backend API",
+            "status": "online",
+            "frontend_url": "http://localhost:5173",
+            "message": "LifeLens AI backend is running. Open http://localhost:5173 in your browser to access the website.",
+            "endpoints": [
+                "/api/scan", "/api/analyze", "/api/barcode",
+                "/api/explain", "/api/chat", "/api/history", "/api/profile", "/health"
+            ]
+        })
+
+    @app.route('/api')
+    def api_index():
+        """API directory listing."""
+        return jsonify({
+            "service": "LifeLens AI Backend API",
+            "status": "online",
+            "version": "1.0.0",
+            "endpoints": [
+                "/api/scan", "/api/analyze", "/api/barcode",
+                "/api/explain", "/api/chat", "/api/history", "/api/profile", "/health"
+            ]
+        })
 
     # Register blueprints
     from app.routes.health import health_bp
@@ -50,7 +81,11 @@ def create_app():
 
     @app.errorhandler(404)
     def not_found(e):
-        return {'error': 'Not found'}, 404
+        return {
+            'error': 'Not found',
+            'message': 'Requested API endpoint does not exist. Visit http://localhost:5173 for the web application.',
+            'available_endpoints': ['/api/scan', '/api/analyze', '/api/barcode', '/api/explain', '/api/chat', '/api/history', '/api/profile', '/health']
+        }, 404
 
     @app.errorhandler(413)
     def too_large(e):
