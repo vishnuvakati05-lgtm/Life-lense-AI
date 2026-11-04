@@ -15,7 +15,7 @@ export const MobileBottomNav: React.FC = () => {
 
   return (
     <nav className="lg:hidden fixed bottom-2 left-3 right-3 z-50 pb-safe">
-      <div className="bg-white/95 backdrop-blur-xl border border-[#E6E7E0] shadow-xl rounded-3xl px-3 py-2 flex items-center justify-around">
+      <div className="bg-white/95 backdrop-blur-2xl border border-[#E6E7E0] shadow-floating rounded-3xl px-3 py-2 flex items-center justify-around">
         {navItems.map((item) => {
           const isActive = location.pathname === item.path;
           const Icon = item.icon;
@@ -28,7 +28,7 @@ export const MobileBottomNav: React.FC = () => {
                 className="relative -top-5 flex flex-col items-center group"
                 aria-label="Scan Food Label"
               >
-                <div className="w-14 h-14 rounded-2xl bg-[#174B38] text-white flex items-center justify-center shadow-lg shadow-[#174B38]/30 border-4 border-[#F8F8F2] group-hover:scale-105 active:scale-95 transition-all duration-150">
+                <div className="w-14 h-14 rounded-2xl bg-[#174B38] text-white flex items-center justify-center shadow-lg shadow-[#174B38]/40 border-4 border-[#F8F8F2] group-hover:scale-105 active:scale-95 transition-all duration-200">
                   <Icon className="w-6 h-6 text-[#D7EDB2]" />
                 </div>
                 <span className="text-[10px] font-bold text-[#174B38] mt-0.5 tracking-tight ">
@@ -42,13 +42,13 @@ export const MobileBottomNav: React.FC = () => {
             <Link
               key={item.path}
               to={item.path}
-              className={`flex flex-col items-center justify-center py-1 px-3 rounded-xl transition-all duration-150 active:scale-95 ${
+              className={`flex flex-col items-center justify-center py-1 px-3 rounded-xl transition-all duration-200 active:scale-95 ${
                 isActive
                   ? 'text-[#174B38] font-bold scale-105'
-                  : 'text-[#78837B] hover:text-[#202923]'
+                  : 'text-[#6E7972] hover:text-[#1D2620]'
               }`}
             >
-              <div className={`p-1 rounded-lg ${isActive ? 'bg-[#EEF8DC]' : ''}`}>
+              <div className={`p-1 rounded-lg ${isActive ? 'bg-[#EEF8DC] shadow-[0_0_8px_rgba(23,75,56,0.15)]' : ''}`}>
                 <Icon className={`w-5 h-5 ${isActive ? 'text-[#174B38] stroke-[2.5px]' : 'stroke-2'}`} />
               </div>
               <span className={`text-[10px] mt-0.5 ${isActive ? 'font-bold text-[#174B38]' : 'font-medium'}`}>

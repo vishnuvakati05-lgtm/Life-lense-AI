@@ -263,7 +263,7 @@ export const SmartScanPage: React.FC = () => {
     <div className="max-w-4xl mx-auto space-y-8 pb-20 animate-fade-in">
 
       {/* Header Banner */}
-      <div className="bg-white p-7 sm:p-10 rounded-3xl border border-[#E6E7E0] shadow-xs space-y-6">
+      <div className="bg-white p-7 sm:p-10 rounded-3xl border border-[#E6E7E0] shadow-soft bg-gradient-to-br from-white to-[#EEF8DC]/20 space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div className="space-y-1.5">
             <div className="inline-flex items-center gap-2 bg-[#EEF8DC] px-3.5 py-1 rounded-full text-xs font-bold text-[#174B38] border border-[#D7EDB2]">
@@ -273,19 +273,19 @@ export const SmartScanPage: React.FC = () => {
             <h1 className="text-2xl sm:text-3xl font-black text-[#174B38] tracking-tight">
               Let&apos;s understand what&apos;s inside.
             </h1>
-            <p className="text-xs sm:text-sm text-[#78837B]">
+            <p className="text-xs sm:text-sm text-[#6E7972]">
               Choose how you want to scan: camera, photo upload, or barcode lookup.
             </p>
           </div>
 
           {/* 3 Prominent Actions Switcher */}
           {mode !== 'review' && (
-            <div className="flex items-center bg-[#F8F8F2] p-1.5 rounded-2xl border border-[#E6E7E0] gap-1 self-start sm:self-center">
+            <div className="flex items-center bg-[#F8F8F2] p-1.5 rounded-2xl border border-[#E6E7E0] gap-1 self-start sm:self-center shadow-xs">
               <button
                 onClick={() => setMode('camera')}
                 className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer ${mode === 'camera'
-                  ? 'bg-[#174B38] text-white shadow-2xs'
-                  : 'text-[#78837B] hover:text-[#202923]'
+                  ? 'bg-[#174B38] text-white shadow-soft'
+                  : 'text-[#6E7972] hover:text-[#1D2620]'
                   }`}
               >
                 <Camera className="w-3.5 h-3.5 shrink-0" />
@@ -294,8 +294,8 @@ export const SmartScanPage: React.FC = () => {
               <button
                 onClick={() => setMode('upload')}
                 className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer ${mode === 'upload'
-                  ? 'bg-[#174B38] text-white shadow-2xs'
-                  : 'text-[#78837B] hover:text-[#202923]'
+                  ? 'bg-[#174B38] text-white shadow-soft'
+                  : 'text-[#6E7972] hover:text-[#1D2620]'
                   }`}
               >
                 <Upload className="w-3.5 h-3.5 shrink-0" />
@@ -304,8 +304,8 @@ export const SmartScanPage: React.FC = () => {
               <button
                 onClick={() => setMode('barcode')}
                 className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer ${mode === 'barcode'
-                  ? 'bg-[#174B38] text-white shadow-2xs'
-                  : 'text-[#78837B] hover:text-[#202923]'
+                  ? 'bg-[#174B38] text-white shadow-soft'
+                  : 'text-[#6E7972] hover:text-[#1D2620]'
                   }`}
               >
                 <Barcode className="w-3.5 h-3.5 shrink-0" />
@@ -318,7 +318,7 @@ export const SmartScanPage: React.FC = () => {
         {/* Panel Tabs */}
         {mode !== 'review' && (
           <div className="flex items-center gap-2 overflow-x-auto pt-2 border-t border-[#E6E7E0] text-xs">
-            <span className="text-[11px] text-[#78837B] font-bold uppercase tracking-wider pl-1">Target Panel:</span>
+            <span className="text-[11px] text-[#6E7972] font-bold uppercase tracking-wider pl-1">Target Panel:</span>
             {[
               { id: 'ingredients', label: 'Ingredients Label' },
               { id: 'front', label: 'Front Packaging' },
@@ -328,8 +328,8 @@ export const SmartScanPage: React.FC = () => {
                 key={tab.id}
                 onClick={() => setLabelTab(tab.id as any)}
                 className={`px-3 py-1 rounded-full border transition-all cursor-pointer ${labelTab === tab.id
-                  ? 'bg-[#EEF8DC] text-[#174B38] border-[#D7EDB2] font-bold'
-                  : 'bg-white text-[#78837B] border-[#E6E7E0] hover:bg-[#F8F8F2]'
+                  ? 'bg-[#EEF8DC] text-[#174B38] border-[#D7EDB2] font-bold shadow-xs'
+                  : 'bg-white text-[#6E7972] border-[#E6E7E0] hover:bg-[#F8F8F2] hover:text-[#1D2620]'
                   }`}
               >
                 {tab.label}
@@ -341,7 +341,7 @@ export const SmartScanPage: React.FC = () => {
 
       {/* Error Banner */}
       {errorMsg && (
-        <div className="bg-[#FDF3F2] border border-[#F8CAC7] text-[#9B2C26] p-4 rounded-2xl flex items-center gap-3 text-xs animate-fade-in">
+        <div className="bg-[#FDF3F2] border border-[#F8CAC7] text-[#9B2C26] p-4 rounded-2xl flex items-center gap-3 text-xs animate-fade-in shadow-soft">
           <AlertTriangle className="w-4 h-4 shrink-0 text-[#D95C55]" />
           <span>{errorMsg}</span>
         </div>
@@ -349,7 +349,7 @@ export const SmartScanPage: React.FC = () => {
 
       {/* Live Processing Progress Indicator */}
       {isLoading && (
-        <div className="bg-white border border-[#D7EDB2] p-10 rounded-3xl text-center space-y-4 shadow-sm animate-fade-in">
+        <div className="bg-white border border-[#D7EDB2] p-10 rounded-3xl text-center space-y-4 shadow-elevated animate-fade-in">
           <div className="relative w-14 h-14 mx-auto">
             <div className="w-14 h-14 border-4 border-[#EEF8DC] border-t-[#174B38] rounded-full animate-spin" />
             <Sparkles className="w-5 h-5 text-[#174B38] absolute inset-0 m-auto animate-pulse" />
@@ -358,15 +358,15 @@ export const SmartScanPage: React.FC = () => {
             <h3 className="font-bold text-lg text-[#174B38]">
               Analyzing Packaging Evidence
             </h3>
-            <p className="text-xs text-[#78837B] font-mono">{loadingStep}</p>
+            <p className="text-xs text-[#6E7972] font-mono">{loadingStep}</p>
           </div>
         </div>
       )}
 
       {/* Sample Label Quick Test helper */}
       {mode !== 'review' && !isLoading && (
-        <div className="bg-white p-5 rounded-2xl border border-[#E6E7E0] flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs shadow-xs">
-          <div className="flex items-center gap-2 text-[#78837B]">
+        <div className="bg-white p-5 rounded-2xl border border-[#E6E7E0] flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs shadow-soft">
+          <div className="flex items-center gap-2 text-[#6E7972]">
             <Sparkles className="w-4 h-4 text-[#174B38] shrink-0" />
             <span>Don&apos;t have a packaged label nearby? Test instant verification:</span>
           </div>
@@ -402,7 +402,7 @@ export const SmartScanPage: React.FC = () => {
                   });
                   setMode('review');
                 }}
-                className="px-3 py-1.5 rounded-xl bg-[#F8F8F2] hover:bg-[#EEF8DC] hover:text-[#174B38] border border-[#E6E7E0] font-semibold transition-all cursor-pointer"
+                className="px-3.5 py-1.5 rounded-xl bg-[#F8F8F2] hover:bg-[#EEF8DC] hover:text-[#174B38] border border-[#E6E7E0] font-semibold transition-all cursor-pointer card-hover"
               >
                 {sample.name.split(' ')[0]} {sample.name.split(' ')[1]}
               </button>
@@ -413,7 +413,7 @@ export const SmartScanPage: React.FC = () => {
 
       {/* MODE 1: CAMERA SCANNING VIEWPORT */}
       {mode === 'camera' && !isLoading && (
-        <div className="bg-[#0F3527] rounded-3xl overflow-hidden shadow-xl border border-[#E6E7E0] relative flex flex-col items-center justify-center min-h-[460px]">
+        <div className="bg-[#0E3326] rounded-3xl overflow-hidden shadow-elevated border border-[#E6E7E0] relative flex flex-col items-center justify-center min-h-[460px]">
           <video
             ref={videoRef}
             autoPlay
@@ -424,9 +424,9 @@ export const SmartScanPage: React.FC = () => {
 
           {/* Subtle Viewport Frame */}
           <div className="absolute inset-0 pointer-events-none flex items-center justify-center p-6">
-            <div className="w-full max-w-md h-64 border border-[#D7EDB2]/60 rounded-3xl relative shadow-[0_0_0_9999px_rgba(15,53,39,0.55)] overflow-hidden">
+            <div className="w-full max-w-md h-64 border border-[#D7EDB2]/60 rounded-3xl relative shadow-[0_0_0_9999px_rgba(14,51,38,0.65)] overflow-hidden">
               {/* Subtle laser sweep */}
-              <div className="absolute left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#D7EDB2] to-transparent shadow-[0_0_8px_#D7EDB2] animate-scan-sweep" />
+              <div className="absolute left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#D7EDB2] to-transparent shadow-[0_0_10px_#D7EDB2] animate-scan-sweep" />
 
               {/* Viewfinder brackets */}
               <span className="absolute top-3 left-3 w-4 h-4 border-t-2 border-l-2 border-[#D7EDB2]" />
@@ -434,7 +434,7 @@ export const SmartScanPage: React.FC = () => {
               <span className="absolute bottom-3 left-3 w-4 h-4 border-b-2 border-l-2 border-[#D7EDB2]" />
               <span className="absolute bottom-3 right-3 w-4 h-4 border-b-2 border-r-2 border-[#D7EDB2]" />
 
-              <span className="absolute bottom-3 inset-x-0 mx-auto w-fit bg-[#174B38]/90 backdrop-blur-sm text-[#D7EDB2] text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+              <span className="absolute bottom-3 inset-x-0 mx-auto w-fit bg-[#174B38]/90 backdrop-blur-sm text-[#D7EDB2] text-[10px] font-bold px-3.5 py-1 rounded-full uppercase tracking-wider shadow-sm">
                 Align {labelTab.toUpperCase()} In Frame
               </span>
             </div>
@@ -456,7 +456,7 @@ export const SmartScanPage: React.FC = () => {
             {/* Central Capture Trigger */}
             <button
               onClick={captureSnapshot}
-              className="w-18 h-18 rounded-full bg-white border-4 border-[#D7EDB2] flex items-center justify-center shadow-xl active:scale-95 transition-transform cursor-pointer"
+              className="w-18 h-18 rounded-full bg-white border-4 border-[#D7EDB2] flex items-center justify-center shadow-floating active:scale-95 transition-transform cursor-pointer"
               title="Capture Image"
             >
               <div className="w-13 h-13 rounded-full bg-[#174B38]" />
@@ -477,21 +477,21 @@ export const SmartScanPage: React.FC = () => {
 
       {/* MODE 2: UPLOAD FOOD LABEL */}
       {mode === 'upload' && !isLoading && (
-        <div className="bg-white p-8 sm:p-14 rounded-3xl border-2 border-dashed border-[#E6E7E0] hover:border-[#174B38] transition-colors text-center space-y-6 shadow-xs">
-          <div className="w-16 h-16 rounded-2xl bg-[#EEF8DC] text-[#174B38] flex items-center justify-center mx-auto">
+        <div className="bg-white p-8 sm:p-14 rounded-3xl border-2 border-dashed border-[#E6E7E0] hover:border-[#174B38] transition-all text-center space-y-6 shadow-soft card-hover">
+          <div className="w-16 h-16 rounded-2xl bg-[#EEF8DC] text-[#174B38] flex items-center justify-center mx-auto shadow-xs">
             <Upload className="w-8 h-8 text-[#174B38]" />
           </div>
 
           <div className="max-w-md mx-auto space-y-1.5">
-            <h3 className="font-bold text-xl text-[#202923]">
+            <h3 className="font-bold text-xl text-[#1D2620]">
               Select Packaging Image
             </h3>
-            <p className="text-xs text-[#78837B] leading-relaxed">
+            <p className="text-xs text-[#6E7972] leading-relaxed">
               Upload a clear photograph of the ingredient panel (JPG, PNG, WebP up to 10MB).
             </p>
           </div>
 
-          <label className="inline-block bg-[#174B38] hover:bg-[#0F3527] text-white font-bold text-xs px-8 py-3.5 rounded-2xl cursor-pointer shadow-xs transition-all active:scale-95">
+          <label className="btn-primary">
             <span>Choose from Device</span>
             <input
               type="file"
@@ -506,7 +506,7 @@ export const SmartScanPage: React.FC = () => {
 
       {/* MODE 3: BARCODE LOOKUP */}
       {mode === 'barcode' && !isLoading && (
-        <div className="bg-white p-8 sm:p-10 rounded-3xl border border-[#E6E7E0] shadow-xs space-y-6">
+        <div className="bg-white p-8 sm:p-10 rounded-3xl border border-[#E6E7E0] shadow-soft space-y-6">
           <div className="flex items-center gap-3 text-[#174B38] font-bold text-xl">
             <Barcode className="w-6 h-6 text-[#174B38] shrink-0" />
             <span>Search via Barcode (EAN / UPC)</span>
@@ -514,7 +514,7 @@ export const SmartScanPage: React.FC = () => {
 
           <form onSubmit={handleBarcodeSubmit} className="space-y-4">
             <div>
-              <label className="block text-xs font-bold text-[#202923] mb-1.5">
+              <label className="block text-xs font-bold text-[#1D2620] mb-1.5">
                 Barcode Number
               </label>
               <div className="flex gap-2">
@@ -523,17 +523,17 @@ export const SmartScanPage: React.FC = () => {
                   value={barcodeInput}
                   onChange={(e) => setBarcodeInput(e.target.value)}
                   placeholder="e.g. 8901030383847 or 5449000000996"
-                  className="flex-1 px-4 py-3.5 text-sm rounded-2xl border border-[#E6E7E0] focus:outline-none focus:border-[#174B38] bg-[#F8F8F2]"
+                  className="flex-1 px-4 py-3.5 text-sm rounded-2xl border border-[#E6E7E0] focus:outline-none focus:border-[#174B38] bg-[#F8F8F2] shadow-inner transition-colors"
                 />
                 <button
                   type="submit"
-                  className="bg-[#174B38] hover:bg-[#0F3527] text-white font-bold text-xs px-6 py-3.5 rounded-2xl transition-colors shadow-xs cursor-pointer"
+                  className="bg-[#174B38] hover:bg-[#0E3326] text-white font-bold text-xs px-6 py-3.5 rounded-2xl transition-colors shadow-soft cursor-pointer active:scale-95"
                 >
                   Lookup
                 </button>
               </div>
             </div>
-            <p className="text-[11px] text-[#78837B] leading-relaxed">
+            <p className="text-[11px] text-[#6E7972] leading-relaxed">
               Queries the global Open Food Facts database. You will be able to review and verify extracted ingredients before running safety analysis.
             </p>
           </form>
@@ -542,7 +542,7 @@ export const SmartScanPage: React.FC = () => {
 
       {/* MODE 4: OCR EXTRACTION REVIEW SCREEN (Zero-Hallucination Barrier) */}
       {mode === 'review' && !isLoading && (
-        <div className="bg-white p-7 sm:p-10 rounded-3xl border border-[#E6E7E0] shadow-xs space-y-6 animate-fade-in">
+        <div className="bg-white p-7 sm:p-10 rounded-3xl border border-[#E6E7E0] shadow-elevated space-y-6 animate-fade-in">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-[#E6E7E0] gap-3">
             <div>
               <div className="flex items-center gap-2">
@@ -551,7 +551,7 @@ export const SmartScanPage: React.FC = () => {
                   Review & Verify Extracted Label
                 </h2>
               </div>
-              <p className="text-xs text-[#78837B] mt-0.5">
+              <p className="text-xs text-[#6E7972] mt-0.5">
                 Inspect the OCR output below. Correct any misread letters before generating safety intelligence.
               </p>
             </div>
@@ -570,7 +570,7 @@ export const SmartScanPage: React.FC = () => {
 
               <button
                 onClick={() => setMode('camera')}
-                className="text-xs text-[#78837B] hover:text-[#202923] border border-[#E6E7E0] hover:bg-[#F8F8F2] px-3.5 py-1.5 rounded-xl flex items-center gap-1.5 transition-colors cursor-pointer"
+                className="text-xs text-[#6E7972] hover:text-[#1D2620] border border-[#E6E7E0] hover:bg-[#F8F8F2] px-3.5 py-1.5 rounded-xl flex items-center gap-1.5 transition-colors cursor-pointer"
               >
                 <RefreshCw className="w-3.5 h-3.5 shrink-0" />
                 <span>Retake</span>
@@ -593,7 +593,7 @@ export const SmartScanPage: React.FC = () => {
           {/* Review Input Fields */}
           <div className="space-y-4">
             <div>
-              <label className="block text-xs font-bold text-[#202923] mb-1">
+              <label className="block text-xs font-bold text-[#1D2620] mb-1">
                 Product Name
               </label>
               <input
@@ -606,10 +606,10 @@ export const SmartScanPage: React.FC = () => {
 
             <div>
               <div className="flex items-center justify-between mb-1">
-                <label className="text-xs font-bold text-[#202923]">
+                <label className="text-xs font-bold text-[#1D2620]">
                   Ingredients Declaration (Directly Editable)
                 </label>
-                <span className="text-[11px] text-[#78837B]">
+                <span className="text-[11px] text-[#6E7972]">
                   Comma-separated or parenthesized ingredients
                 </span>
               </div>
@@ -623,7 +623,7 @@ export const SmartScanPage: React.FC = () => {
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-[#202923] mb-1">
+              <label className="block text-xs font-bold text-[#1D2620] mb-1">
                 Declared Allergen / Contains Statement
               </label>
               <input

@@ -90,7 +90,7 @@ export const SettingsPage: React.FC = () => {
     <div className="max-w-4xl mx-auto space-y-8 pb-20 animate-fade-in">
       
       {/* Settings Header */}
-      <div className="bg-white p-7 sm:p-10 rounded-3xl border border-[#E6E7E0] shadow-xs space-y-2">
+      <div className="bg-white p-7 sm:p-10 rounded-3xl border border-[#E6E7E0] shadow-soft bg-gradient-to-br from-white to-[#EEF8DC]/20 space-y-2">
         <div className="flex items-center gap-2 text-[#174B38] font-bold text-xs uppercase tracking-wider mb-1">
           <Settings className="w-4 h-4 text-[#174B38] shrink-0" />
           <span>Profile & Safety Preferences</span>
@@ -98,13 +98,13 @@ export const SettingsPage: React.FC = () => {
         <h1 className="text-2xl sm:text-3xl font-black text-[#174B38] tracking-tight">
           Settings & Allergen Profile
         </h1>
-        <p className="text-xs sm:text-sm text-[#78837B] leading-relaxed">
+        <p className="text-xs sm:text-sm text-[#6E7972] leading-relaxed">
           Configure your personal allergen checklist, primary language, voice rate, and local privacy controls.
         </p>
       </div>
 
       {/* Language Section */}
-      <section className="bg-white p-7 rounded-3xl border border-[#E6E7E0] shadow-xs space-y-4">
+      <section className="bg-white p-7 rounded-3xl border border-[#E6E7E0] shadow-soft space-y-4">
         <div className="flex items-center gap-2 text-[#174B38] font-bold text-lg">
           <Globe className="w-5 h-5 text-[#174B38] shrink-0" />
           <span>Primary App & Voice Language</span>
@@ -120,9 +120,9 @@ export const SettingsPage: React.FC = () => {
               <button
                 key={l.code}
                 onClick={() => setLanguage(l.code as Language)}
-                className={`p-4 rounded-2xl border text-left transition-all cursor-pointer ${
+                className={`p-4 rounded-2xl border text-left transition-all cursor-pointer card-hover ${
                   isSelected
-                    ? 'border-[#174B38] bg-[#EEF8DC] shadow-2xs'
+                    ? 'border-[#174B38] bg-[#EEF8DC] shadow-xs'
                     : 'border-[#E6E7E0] hover:bg-[#F8F8F2]'
                 }`}
               >
@@ -132,7 +132,7 @@ export const SettingsPage: React.FC = () => {
                   </span>
                   {isSelected && <Check className="w-4 h-4 text-[#174B38] shrink-0" />}
                 </div>
-                <p className="text-xs text-[#78837B] mt-1">{l.desc}</p>
+                <p className="text-xs text-[#6E7972] mt-1">{l.desc}</p>
               </button>
             );
           })}
@@ -140,13 +140,13 @@ export const SettingsPage: React.FC = () => {
       </section>
 
       {/* Personal Allergen Profile Checklist */}
-      <section className="bg-white p-7 rounded-3xl border border-[#E6E7E0] shadow-xs space-y-5">
+      <section className="bg-white p-7 rounded-3xl border border-[#E6E7E0] shadow-soft space-y-5">
         <div className="space-y-1">
           <div className="flex items-center gap-2 text-[#174B38] font-bold text-lg">
             <ShieldCheck className="w-5 h-5 text-[#174B38] shrink-0" />
             <span>Personal Allergen Profile Checklist</span>
           </div>
-          <p className="text-xs text-[#78837B]">
+          <p className="text-xs text-[#6E7972]">
             Select allergens you must avoid. LifeLens will cross-match every scanned label and flag direct components, derivatives, and regional Indian synonyms.
           </p>
         </div>
@@ -158,15 +158,15 @@ export const SettingsPage: React.FC = () => {
               <button
                 key={item.id}
                 onClick={() => toggleAllergen(item.id)}
-                className={`p-3.5 rounded-2xl border flex items-center justify-between text-left transition-all cursor-pointer ${
+                className={`p-3.5 rounded-2xl border flex items-center justify-between text-left transition-all cursor-pointer card-hover ${
                   isChecked
                     ? 'bg-[#FDF3F2] border-[#F8CAC7] text-[#9B2C26]'
-                    : 'bg-[#F8F8F2] border-[#E6E7E0] hover:bg-[#EEF8DC] hover:text-[#174B38] text-[#202923]'
+                    : 'bg-[#F8F8F2] border-[#E6E7E0] hover:bg-[#EEF8DC] hover:text-[#174B38] text-[#1D2620]'
                 }`}
               >
                 <div className="space-y-0.5">
                   <span className="text-xs font-bold block">{item.label}</span>
-                  <span className="text-[10px] text-[#78837B] block">
+                  <span className="text-[10px] text-[#6E7972] block">
                     {language === 'hi' ? item.hi : language === 'te' ? item.te : 'Common allergen'}
                   </span>
                 </div>
@@ -186,7 +186,7 @@ export const SettingsPage: React.FC = () => {
 
         {/* Custom Allergens Section */}
         <div className="pt-4 border-t border-[#E6E7E0] space-y-3">
-          <label className="block text-xs font-bold text-[#202923]">
+          <label className="block text-xs font-bold text-[#1D2620]">
             Add Custom Allergens or Ingredients to Flag
           </label>
           <form onSubmit={handleAddCustom} className="flex gap-2">
@@ -199,7 +199,7 @@ export const SettingsPage: React.FC = () => {
             />
             <button
               type="submit"
-              className="px-5 py-2.5 bg-[#174B38] hover:bg-[#0F3527] text-white text-xs font-bold rounded-xl flex items-center gap-1.5 transition-colors cursor-pointer"
+              className="px-5 py-2.5 bg-[#174B38] hover:bg-[#0E3326] text-white text-xs font-bold rounded-xl flex items-center gap-1.5 transition-colors cursor-pointer shadow-soft active:scale-95"
             >
               <Plus className="w-4 h-4 shrink-0" />
               <span>Add</span>
@@ -211,7 +211,7 @@ export const SettingsPage: React.FC = () => {
               {customAllergens.map((item, idx) => (
                 <span
                   key={idx}
-                  className="bg-[#FDF3F2] text-[#9B2C26] border border-[#F8CAC7] text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1.5"
+                  className="bg-[#FDF3F2] text-[#9B2C26] border border-[#F8CAC7] text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1.5 shadow-2xs"
                 >
                   <span>{item}</span>
                   <button
@@ -228,14 +228,14 @@ export const SettingsPage: React.FC = () => {
       </section>
 
       {/* Voice Synthesis Settings */}
-      <section className="bg-white p-7 rounded-3xl border border-[#E6E7E0] shadow-xs space-y-4">
+      <section className="bg-white p-7 rounded-3xl border border-[#E6E7E0] shadow-soft space-y-4">
         <div className="flex items-center gap-2 text-[#174B38] font-bold text-lg">
           <Volume2 className="w-5 h-5 text-[#174B38] shrink-0" />
           <span>Text-to-Speech (TTS) Voice Configuration</span>
         </div>
         <div className="space-y-4 max-w-md">
           <div>
-            <div className="flex justify-between text-xs font-semibold mb-2 text-[#78837B]">
+            <div className="flex justify-between text-xs font-semibold mb-2 text-[#6E7972]">
               <span>Speech Rate Speed</span>
               <span className="font-bold text-[#174B38]">{speechRate}×</span>
             </div>
@@ -252,7 +252,7 @@ export const SettingsPage: React.FC = () => {
 
           <button
             onClick={handleTestVoice}
-            className="px-4 py-2 bg-[#F8F8F2] hover:bg-[#EEF8DC] text-[#174B38] rounded-xl text-xs font-bold transition-all flex items-center gap-2 cursor-pointer border border-[#E6E7E0]"
+            className="px-4 py-2 bg-[#F8F8F2] hover:bg-[#EEF8DC] text-[#174B38] rounded-xl text-xs font-bold transition-all flex items-center gap-2 cursor-pointer border border-[#E6E7E0] card-hover"
           >
             <Play className="w-3.5 h-3.5 text-[#174B38] shrink-0" />
             <span>Test Voice Synthesis</span>
@@ -261,17 +261,17 @@ export const SettingsPage: React.FC = () => {
       </section>
 
       {/* Privacy & Data Clearance */}
-      <section className="bg-white p-7 rounded-3xl border border-[#F8CAC7] space-y-3">
+      <section className="bg-white p-7 rounded-3xl border border-[#F8CAC7] shadow-soft space-y-3">
         <div className="flex items-center gap-2 text-[#D95C55] font-bold text-base">
           <AlertTriangle className="w-5 h-5 shrink-0" />
           <span>Local Privacy & Storage Management</span>
         </div>
-        <p className="text-xs text-[#78837B] leading-relaxed">
+        <p className="text-xs text-[#6E7972] leading-relaxed">
           LifeLens AI runs its deterministic engine and stores your allergy profile directly in your browser or device local storage. No persistent biometric voice recordings are stored.
         </p>
         <button
           onClick={handleDeleteAll}
-          className="px-5 py-2.5 bg-[#D95C55] hover:bg-[#9B2C26] text-white text-xs font-bold rounded-xl flex items-center gap-2 transition-all cursor-pointer shadow-2xs"
+          className="px-5 py-2.5 bg-[#D95C55] hover:bg-[#9B2C26] text-white text-xs font-bold rounded-xl flex items-center gap-2 transition-all cursor-pointer shadow-soft active:scale-95"
         >
           <Trash2 className="w-3.5 h-3.5 shrink-0" />
           <span>Clear All Local Profile & History Data</span>

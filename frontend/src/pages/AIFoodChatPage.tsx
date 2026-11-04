@@ -191,7 +191,7 @@ export const AIFoodChatPage: React.FC = () => {
     <div className="max-w-4xl mx-auto space-y-6 pb-20 animate-fade-in flex flex-col h-[calc(100vh-140px)] min-h-[620px]">
       
       {/* 7. AI FOOD ASSISTANT HEADER */}
-      <div className="bg-white p-6 sm:p-8 rounded-3xl border border-[#E6E7E0] shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-5 shrink-0">
+      <div className="bg-white p-6 sm:p-8 rounded-3xl border border-[#E6E7E0] shadow-soft bg-gradient-to-br from-white to-[#EEF8DC]/20 flex flex-col sm:flex-row sm:items-center justify-between gap-5 shrink-0">
         <div className="space-y-1">
           <div className="inline-flex items-center gap-2 bg-[#EEF8DC] px-3.5 py-1 rounded-full text-xs font-bold text-[#174B38] border border-[#D7EDB2]">
             <Sparkles className="w-3.5 h-3.5 text-[#174B38]" />
@@ -200,7 +200,7 @@ export const AIFoodChatPage: React.FC = () => {
           <h1 className="text-2xl sm:text-3xl font-black text-[#174B38] tracking-tight">
             Ask anything about your food.
           </h1>
-          <p className="text-xs sm:text-sm text-[#78837B]">
+          <p className="text-xs sm:text-sm text-[#6E7972]">
             Your personal ingredient expert, available in three languages.
           </p>
           <div className="pt-1">
@@ -213,15 +213,15 @@ export const AIFoodChatPage: React.FC = () => {
         {/* Controls: Language & Concise/In-Depth Toggle */}
         <div className="flex flex-col sm:items-end gap-2 self-start sm:self-center">
           {/* Language selector: English | हिंदी | తెలుగు */}
-          <div className="flex items-center bg-[#F8F8F2] p-1 rounded-xl border border-[#E6E7E0] text-xs">
+          <div className="flex items-center bg-[#F8F8F2] p-1 rounded-xl border border-[#E6E7E0] text-xs shadow-xs">
             {(['en', 'hi', 'te'] as Language[]).map((langCode) => (
               <button
                 key={langCode}
                 onClick={() => setLanguage(langCode)}
                 className={`px-3 py-1 rounded-lg font-bold transition-all cursor-pointer ${
                   language === langCode
-                    ? 'bg-[#174B38] text-white'
-                    : 'text-[#78837B] hover:text-[#202923]'
+                    ? 'bg-[#174B38] text-white shadow-soft'
+                    : 'text-[#6E7972] hover:text-[#1D2620]'
                 }`}
               >
                 {langCode === 'en' ? 'English' : langCode === 'hi' ? 'हिंदी' : 'తెలుగు'}
@@ -230,13 +230,13 @@ export const AIFoodChatPage: React.FC = () => {
           </div>
 
           {/* Quick vs Detailed Toggle */}
-          <div className="flex items-center bg-[#F8F8F2] p-1 rounded-xl border border-[#E6E7E0] text-xs gap-1">
+          <div className="flex items-center bg-[#F8F8F2] p-1 rounded-xl border border-[#E6E7E0] text-xs gap-1 shadow-xs">
             <button
               onClick={() => setResponseLength('quick')}
               className={`px-3 py-1 rounded-lg font-bold transition-all cursor-pointer ${
                 responseLength === 'quick'
-                  ? 'bg-[#174B38] text-white'
-                  : 'text-[#78837B] hover:text-[#202923]'
+                  ? 'bg-[#174B38] text-white shadow-soft'
+                  : 'text-[#6E7972] hover:text-[#1D2620]'
               }`}
             >
               Concise
@@ -245,8 +245,8 @@ export const AIFoodChatPage: React.FC = () => {
               onClick={() => setResponseLength('detailed')}
               className={`px-3 py-1 rounded-lg font-bold transition-all cursor-pointer ${
                 responseLength === 'detailed'
-                  ? 'bg-[#174B38] text-white'
-                  : 'text-[#78837B] hover:text-[#202923]'
+                  ? 'bg-[#174B38] text-white shadow-soft'
+                  : 'text-[#6E7972] hover:text-[#1D2620]'
               }`}
             >
               In-Depth
@@ -257,14 +257,14 @@ export const AIFoodChatPage: React.FC = () => {
 
       {/* Suggested Quick Prompt Chips */}
       <div className="flex items-center gap-2 overflow-x-auto pb-1 shrink-0 text-xs">
-        <span className="text-[10px] font-bold text-[#78837B] uppercase tracking-wider pl-1 shrink-0">
+        <span className="text-[10px] font-bold text-[#6E7972] uppercase tracking-wider pl-1 shrink-0">
           Suggested:
         </span>
         {samplePrompts.map((p, idx) => (
           <button
             key={idx}
             onClick={() => handleSend(p)}
-            className="whitespace-nowrap px-3 py-1.5 rounded-full bg-white hover:bg-[#EEF8DC] hover:text-[#174B38] text-[#78837B] font-semibold border border-[#E6E7E0] transition-all card-hover cursor-pointer"
+            className="whitespace-nowrap px-3.5 py-1.5 rounded-full bg-white hover:bg-[#EEF8DC] hover:text-[#174B38] text-[#6E7972] font-semibold border border-[#E6E7E0] transition-all card-hover cursor-pointer shadow-xs"
           >
             {p}
           </button>
@@ -272,7 +272,7 @@ export const AIFoodChatPage: React.FC = () => {
       </div>
 
       {/* Chat Messages Container */}
-      <div className="flex-1 overflow-y-auto space-y-4 p-5 sm:p-6 bg-white rounded-3xl border border-[#E6E7E0] shadow-xs custom-scrollbar">
+      <div className="flex-1 overflow-y-auto space-y-4 p-5 sm:p-6 bg-white rounded-3xl border border-[#E6E7E0] shadow-soft custom-scrollbar">
         {messages.map((m) => {
           const isUser = m.sender === 'user';
           return (
@@ -282,7 +282,7 @@ export const AIFoodChatPage: React.FC = () => {
             >
               {/* Avatar Icon */}
               <div
-                className={`w-9 h-9 rounded-2xl flex items-center justify-center shrink-0 shadow-2xs ${
+                className={`w-9 h-9 rounded-2xl flex items-center justify-center shrink-0 shadow-xs ${
                   isUser
                     ? 'bg-[#174B38] text-white'
                     : 'bg-[#EEF8DC] text-[#174B38] border border-[#D7EDB2]'
@@ -294,10 +294,10 @@ export const AIFoodChatPage: React.FC = () => {
               {/* Message Content Bubble */}
               <div className="space-y-2">
                 <div
-                  className={`p-4 rounded-3xl text-xs sm:text-sm leading-relaxed shadow-2xs ${
+                  className={`p-4 rounded-3xl text-xs sm:text-sm leading-relaxed shadow-xs ${
                     isUser
                       ? 'bg-[#174B38] text-white rounded-tr-xs'
-                      : 'bg-[#F8F8F2] border border-[#E6E7E0] text-[#202923] rounded-tl-xs'
+                      : 'bg-[#F8F8F2] border border-[#E6E7E0] text-[#1D2620] rounded-tl-xs'
                   }`}
                 >
                   <p className="whitespace-pre-line">{m.text}</p>
@@ -305,7 +305,7 @@ export const AIFoodChatPage: React.FC = () => {
                   {/* Sources Footnote */}
                   {m.sources && m.sources.length > 0 && (
                     <div className="pt-3 mt-3 border-t border-[#E6E7E0] space-y-1">
-                      <span className="text-[10px] font-bold text-[#78837B] uppercase tracking-wider block">
+                      <span className="text-[10px] font-bold text-[#6E7972] uppercase tracking-wider block">
                         Scientific Sources:
                       </span>
                       {m.sources.map((s, idx) => (
@@ -328,7 +328,7 @@ export const AIFoodChatPage: React.FC = () => {
                 </div>
 
                 {/* Sub-actions */}
-                <div className={`flex items-center gap-2 text-[10px] text-[#78837B] ${isUser ? 'justify-end' : 'justify-start'}`}>
+                <div className={`flex items-center gap-2 text-[10px] text-[#6E7972] ${isUser ? 'justify-end' : 'justify-start'}`}>
                   <span>{m.timestamp}</span>
                   {!isUser && (
                     <button
@@ -363,11 +363,11 @@ export const AIFoodChatPage: React.FC = () => {
 
         {/* Loading Indicator */}
         {isLoading && (
-          <div className="flex gap-3 max-w-[80%] mr-auto items-center">
-            <div className="w-9 h-9 rounded-2xl bg-[#EEF8DC] text-[#174B38] flex items-center justify-center border border-[#D7EDB2]">
+          <div className="flex gap-3 max-w-[80%] mr-auto items-center animate-fade-in">
+            <div className="w-9 h-9 rounded-2xl bg-[#EEF8DC] text-[#174B38] flex items-center justify-center border border-[#D7EDB2] shadow-xs">
               <Sparkles className="w-4 h-4 text-[#174B38] animate-spin" />
             </div>
-            <div className="bg-[#F8F8F2] p-4 rounded-3xl border border-[#E6E7E0] flex items-center gap-2 text-xs text-[#78837B]">
+            <div className="bg-[#F8F8F2] p-4 rounded-3xl border border-[#E6E7E0] flex items-center gap-2 text-xs text-[#6E7972] shadow-xs">
               <span className="w-2 h-2 rounded-full bg-[#174B38] animate-ping" />
               <span>Grounded scientific retrieval in progress...</span>
             </div>
@@ -379,7 +379,7 @@ export const AIFoodChatPage: React.FC = () => {
 
       {/* Voice Error Notice */}
       {speechError && (
-        <div className="bg-[#FDF3F2] border border-[#F8CAC7] text-[#9B2C26] p-3 rounded-2xl text-xs flex items-center gap-2 shrink-0">
+        <div className="bg-[#FDF3F2] border border-[#F8CAC7] text-[#9B2C26] p-3 rounded-2xl text-xs flex items-center gap-2 shrink-0 shadow-soft">
           <Info className="w-4 h-4 shrink-0 text-[#D95C55]" />
           <span>{speechError}</span>
         </div>
@@ -399,7 +399,7 @@ export const AIFoodChatPage: React.FC = () => {
                 ? `'${currentProductContext.product_name}' గురించి ఏమైనా అడగండి...`
                 : `Ask any question about '${currentProductContext.product_name}'...`
             }
-            className="w-full pl-5 pr-28 py-4 text-xs sm:text-sm rounded-2xl border border-[#E6E7E0] bg-white focus:outline-none focus:border-[#174B38] shadow-xs"
+            className="w-full pl-5 pr-28 py-4 text-xs sm:text-sm rounded-2xl border border-[#E6E7E0] bg-white focus:outline-none focus:border-[#174B38] shadow-soft transition-colors"
           />
 
           <div className="absolute right-2 flex items-center gap-1.5">
@@ -410,7 +410,7 @@ export const AIFoodChatPage: React.FC = () => {
               className={`p-2.5 rounded-xl transition-all cursor-pointer ${
                 isListening
                   ? 'bg-[#D95C55] text-white animate-pulse shadow-md'
-                  : 'bg-[#F8F8F2] hover:bg-[#EEF8DC] text-[#78837B]'
+                  : 'bg-[#F8F8F2] hover:bg-[#EEF8DC] text-[#6E7972]'
               }`}
               title="Speak question"
             >
@@ -421,7 +421,7 @@ export const AIFoodChatPage: React.FC = () => {
             <button
               type="submit"
               disabled={isLoading || !input.trim()}
-              className="bg-[#174B38] hover:bg-[#0F3527] disabled:opacity-40 text-white p-2.5 rounded-xl transition-all shadow-xs cursor-pointer"
+              className="bg-[#174B38] hover:bg-[#0E3326] disabled:opacity-40 text-white p-2.5 rounded-xl transition-all shadow-soft cursor-pointer active:scale-95"
               title="Send question"
             >
               <Send className="w-4 h-4 shrink-0 text-[#D7EDB2]" />
