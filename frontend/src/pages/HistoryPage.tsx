@@ -55,7 +55,7 @@ export const HistoryPage: React.FC = () => {
             <History className="w-4 h-4 text-[#174B38] shrink-0" />
             <span>Local Archive</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-black font-['Plus_Jakarta_Sans',sans-serif] text-[#174B38] tracking-tight">
+          <h1 className="text-2xl sm:text-3xl font-black text-[#174B38] tracking-tight">
             Packaging Scan History
           </h1>
           <p className="text-xs text-[#78837B] mt-1">
@@ -77,7 +77,7 @@ export const HistoryPage: React.FC = () => {
       {history.length === 0 ? (
         <div className="bg-white p-14 rounded-3xl border border-[#E6E7E0] text-center space-y-4 shadow-xs">
           <Clock className="w-12 h-12 text-[#174B38] mx-auto opacity-40 shrink-0" />
-          <h3 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-lg text-[#202923]">No Scans Stored Yet</h3>
+          <h3 className="font-bold text-lg text-[#202923]">No Scans Stored Yet</h3>
           <p className="text-xs text-[#78837B] max-w-sm mx-auto leading-relaxed">
             Scan a packaging label using the camera or upload an image to begin building your personal ingredient intelligence archive.
           </p>
@@ -98,7 +98,7 @@ export const HistoryPage: React.FC = () => {
             >
               <div className="space-y-1.5 flex-1">
                 <div className="flex items-center gap-2 flex-wrap">
-                  <h3 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-lg text-[#202923]">
+                  <h3 className="font-bold text-lg text-[#202923]">
                     {record.product_name}
                   </h3>
                   <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-[#EEF8DC] text-[#174B38] border border-[#D7EDB2]">

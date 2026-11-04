@@ -8,21 +8,15 @@ import {
   CheckCircle2,
   FileCheck2,
   Search,
-  Scale,
   ShieldCheck,
   AlertTriangle,
   Sparkles,
-  Info,
   ShieldAlert,
   Flame,
   Activity,
   MessageSquare,
   HelpCircle,
-  Smartphone,
   ChevronDown,
-  Layers,
-  Check,
-  Eye,
   ScanLine
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
@@ -214,37 +208,37 @@ export const HomePage: React.FC = () => {
   ];
 
   return (
-    <div className="space-y-20 pb-20 animate-fade-in max-w-7xl mx-auto">
+    <div className="space-y-16 sm:space-y-24 pb-20 animate-fade-in max-w-7xl mx-auto">
       
       {/* ==========================================================================
           HERO SECTION — EDITORIAL ELEGANCE & SOPHISTICATED PRODUCT DEMONSTRATION
           ========================================================================== */}
-      <section className="relative overflow-hidden rounded-3xl sm:rounded-[2.5rem] bg-[#174B38] text-white p-8 sm:p-12 lg:p-16 shadow-xl border border-[#216149]">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-12 items-center relative z-10">
+      <section className="relative overflow-hidden rounded-3xl sm:rounded-[2.5rem] bg-gradient-to-br from-[#123D2E] via-[#174B38] to-[#0E3326] text-white p-6 sm:p-10 lg:p-14 shadow-floating border border-[#266850]">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
           
           {/* Left Column: Heading, Subtitle & CTAs */}
           <div className="lg:col-span-7 space-y-6">
-            <div className="inline-flex items-center gap-2 bg-[#EEF8DC]/15 backdrop-blur-sm px-4 py-1.5 rounded-full text-xs font-bold text-[#D7EDB2] border border-[#D7EDB2]/25 shadow-xs">
+            <div className="inline-flex items-center gap-2 bg-[#EEF8DC]/15 backdrop-blur-md px-4 py-1.5 rounded-full text-xs font-bold text-[#D7EDB2] border border-[#D7EDB2]/25 shadow-xs">
               <span className="w-2 h-2 rounded-full bg-[#D7EDB2] animate-pulse" />
               <span>Multilingual Food Intelligence Platform</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black font-['Plus_Jakarta_Sans',sans-serif] tracking-tight leading-[1.12] text-white">
+            <h1 className="text-3xl sm:text-5xl lg:text-[3.5rem] font-extrabold tracking-tight leading-[1.08] text-white">
               Know What&apos;s Inside.<br />
-              <span className="text-[#D7EDB2]">
+              <span className="text-[#D7EDB2] font-black">
                 Make Smarter Food Choices.
               </span>
             </h1>
 
             <p className="text-sm sm:text-base text-[#D7EDB2]/90 leading-relaxed max-w-xl font-normal">
-              Scan any food package, understand its ingredients and discover what goes into the food you eat — in <strong>English</strong>, <strong>हिन्दी</strong> and <strong>తెలుగు</strong>.
+              Scan any food package, understand its ingredients and discover what goes into the food you eat — in <strong>English</strong>, <strong>हिन्दी</strong>, and <strong>తెలుగు</strong>.
             </p>
 
             {/* Action Buttons */}
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <button
                 onClick={() => navigate('/scan')}
-                className="bg-[#D7EDB2] hover:bg-[#EEF8DC] text-[#174B38] font-['Plus_Jakarta_Sans',sans-serif] font-bold text-sm px-8 py-4 rounded-2xl shadow-md transition-all duration-150 active:scale-95 cursor-pointer flex items-center gap-2.5"
+                className="bg-[#D7EDB2] hover:bg-white text-[#174B38] font-extrabold text-sm px-8 py-4 rounded-2xl shadow-[0_4px_20px_rgba(215,237,178,0.35)] hover:shadow-[0_8px_28px_rgba(215,237,178,0.5)] transition-all duration-200 active:scale-95 cursor-pointer flex items-center gap-2.5"
               >
                 <Camera className="w-5 h-5 shrink-0 text-[#174B38]" />
                 <span>Start Scanning</span>
@@ -252,10 +246,10 @@ export const HomePage: React.FC = () => {
 
               <button
                 onClick={() => navigate('/explore')}
-                className="bg-white/10 hover:bg-white/15 text-white font-semibold text-sm px-7 py-4 rounded-2xl border border-white/20 transition-all backdrop-blur-sm flex items-center gap-2.5 cursor-pointer"
+                className="bg-white/10 hover:bg-white/20 text-white font-bold text-sm px-7 py-4 rounded-2xl border border-white/20 transition-all duration-200 backdrop-blur-md flex items-center gap-2.5 cursor-pointer active:scale-95"
               >
                 <BookOpen className="w-4 h-4 text-[#D7EDB2] shrink-0" />
-                <span>Explore LifeLens</span>
+                <span>Explore Ingredients</span>
               </button>
             </div>
 
@@ -277,49 +271,60 @@ export const HomePage: React.FC = () => {
           </div>
 
           {/* Right Column: Realistic Smartphone Product Scanner Demo with Interactive Views */}
-          <div className="lg:col-span-5 relative flex justify-center">
+          <div className="lg:col-span-5 relative flex justify-center py-4">
             
-            {/* Phone Container */}
-            <div className="relative w-full max-w-[370px] bg-white rounded-[2.5rem] p-4 shadow-2xl border-4 border-[#216149]/40 text-[#202923]">
+            {/* Phone Chassis */}
+            <div className="relative w-full max-w-[340px] iphone-frame text-[#1D2620]">
               
-              {/* Phone Speaker Notch / Dynamic Island */}
-              <div className="w-24 h-4 bg-[#174B38]/15 rounded-full mx-auto mb-3 flex items-center justify-center gap-1.5">
-                <span className="w-2 h-2 rounded-full bg-[#174B38]/40" />
-                <span className="w-1.5 h-1.5 rounded-full bg-[#174B38]/30" />
+              {/* Dynamic Island */}
+              <div className="iphone-island">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#174B38] animate-pulse" />
+                <span className="w-3 h-3 rounded-full bg-[#0E3326] border border-white/20" />
               </div>
 
-              {/* Viewport Card */}
-              <div className="bg-[#F8F8F2] rounded-3xl p-4 border border-[#E6E7E0] relative overflow-hidden space-y-3">
+              {/* Inner Smartphone Screen */}
+              <div className="iphone-inner p-4 space-y-3">
                 
-                {/* Header bar & Mode Selector */}
-                <div className="flex items-center justify-between pb-2 border-b border-[#E6E7E0]">
-                  <div className="flex items-center gap-1 bg-white p-0.5 rounded-xl border border-[#E6E7E0] text-[10px]">
+                {/* Simulated iOS Status Bar */}
+                <div className="flex items-center justify-between text-[11px] font-bold text-[#1D2620] px-2 pt-0.5">
+                  <span>9:41</span>
+                  <div className="flex items-center gap-1.5 text-[10px]">
+                    <span className="font-mono text-[9px] bg-[#EEF8DC] text-[#174B38] px-1.5 py-0.5 rounded font-bold">5G</span>
+                    <span className="w-4 h-2 rounded-xs border border-[#1D2620] p-0.5 flex items-center">
+                      <span className="w-full h-full bg-[#174B38] rounded-2xs" />
+                    </span>
+                  </div>
+                </div>
+
+                {/* Viewfinder / Dossier Mode Switcher */}
+                <div className="flex items-center justify-between pb-1 border-b border-[#E6E7E0]">
+                  <div className="flex items-center gap-1 bg-white p-1 rounded-xl border border-[#E6E7E0] text-[10px]">
                     <button
                       onClick={() => setPhoneTab('scan')}
-                      className={`px-2.5 py-1 rounded-lg font-bold transition-all cursor-pointer ${
-                        phoneTab === 'scan' ? 'bg-[#174B38] text-white' : 'text-[#78837B]'
+                      className={`px-3 py-1 rounded-lg font-bold transition-all cursor-pointer ${
+                        phoneTab === 'scan' ? 'bg-[#174B38] text-white shadow-2xs' : 'text-[#6E7972]'
                       }`}
                     >
                       Viewfinder
                     </button>
                     <button
                       onClick={() => setPhoneTab('analysis')}
-                      className={`px-2.5 py-1 rounded-lg font-bold transition-all cursor-pointer ${
-                        phoneTab === 'analysis' ? 'bg-[#174B38] text-white' : 'text-[#78837B]'
+                      className={`px-3 py-1 rounded-lg font-bold transition-all cursor-pointer ${
+                        phoneTab === 'analysis' ? 'bg-[#174B38] text-white shadow-2xs' : 'text-[#6E7972]'
                       }`}
                     >
                       Dossier
                     </button>
                   </div>
-                  <span className="text-[10px] font-mono bg-[#EEF8DC] text-[#174B38] font-bold px-2 py-0.5 rounded-full border border-[#D7EDB2]">
+                  <span className="text-[10px] font-mono bg-[#EEF8DC] text-[#174B38] font-bold px-2.5 py-0.5 rounded-full border border-[#D7EDB2]">
                     OCR: 98%
                   </span>
                 </div>
 
                 {phoneTab === 'scan' ? (
                   <>
-                    {/* Viewfinder Mode */}
-                    <div className="relative bg-white rounded-2xl p-4 border border-[#E6E7E0] overflow-hidden min-h-[220px] flex flex-col justify-between">
+                    {/* Viewfinder Area */}
+                    <div className="relative bg-white rounded-2xl p-4 border border-[#E6E7E0] overflow-hidden min-h-[190px] flex flex-col justify-between shadow-2xs">
                       {/* Laser scan line */}
                       <div className="absolute left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#64A77A] to-transparent shadow-[0_0_8px_#64A77A] animate-scan-sweep" />
 
@@ -329,13 +334,13 @@ export const HomePage: React.FC = () => {
                       <div className="absolute bottom-2 left-2 w-3.5 h-3.5 border-b-2 border-l-2 border-[#174B38]" />
                       <div className="absolute bottom-2 right-2 w-3.5 h-3.5 border-b-2 border-r-2 border-[#174B38]" />
 
-                      {/* Packaging simulation */}
+                      {/* Packaging header inside camera */}
                       <div className="space-y-1">
                         <div className="flex items-center justify-between">
                           <span className="text-[9px] font-bold uppercase tracking-wider text-[#174B38] bg-[#EEF8DC] px-2 py-0.5 rounded-md">
                             {activeMock.category}
                           </span>
-                          <div className="flex gap-1">
+                          <div className="flex gap-1.5">
                             {sampleProducts.map((_, i) => (
                               <button
                                 key={i}
@@ -348,10 +353,10 @@ export const HomePage: React.FC = () => {
                             ))}
                           </div>
                         </div>
-                        <h4 className="font-['Plus_Jakarta_Sans',sans-serif] font-black text-sm text-[#202923] mt-1">
+                        <h4 className="font-extrabold text-sm text-[#1D2620] mt-1">
                           {activeMock.name}
                         </h4>
-                        <p className="text-[10px] text-[#78837B] font-mono leading-relaxed line-clamp-3 bg-[#F8F8F2] p-2 rounded-xl border border-[#E6E7E0]">
+                        <p className="text-[10px] text-[#6E7972] font-mono leading-relaxed line-clamp-2 bg-[#F8F8F2] p-2 rounded-xl border border-[#E6E7E0]">
                           {activeMock.ingredients}
                         </p>
                       </div>
@@ -362,14 +367,14 @@ export const HomePage: React.FC = () => {
                           <ScanLine className="w-3.5 h-3.5 text-[#174B38]" />
                           <span>4 INS codes extracted</span>
                         </span>
-                        <span className="text-[#78837B] text-[9px]">Tap formulation dots above</span>
+                        <span className="text-[#6E7972] text-[9px]">Tap dots to switch</span>
                       </div>
                     </div>
 
-                    {/* Floating UI Elements */}
+                    {/* Floating Badges */}
                     <div className="space-y-2">
-                      <div className="p-2.5 bg-white rounded-2xl border border-[#E6E7E0] flex items-center justify-between">
-                        <div className="flex items-center gap-1.5 text-[11px] font-bold text-[#202923]">
+                      <div className="p-2.5 bg-white rounded-2xl border border-[#E6E7E0] flex items-center justify-between shadow-2xs">
+                        <div className="flex items-center gap-1.5 text-[11px] font-bold text-[#1D2620]">
                           <ShieldCheck className="w-4 h-4 text-[#174B38] shrink-0" />
                           <span>Additives Isolated</span>
                         </div>
@@ -383,17 +388,17 @@ export const HomePage: React.FC = () => {
                       </div>
 
                       {activeMock.allergen_statement ? (
-                        <div className="p-2.5 bg-[#FDF3F2] rounded-2xl border border-[#F8CAC7] flex items-center justify-between gap-2">
+                        <div className="p-2.5 bg-[#FDF3F2] rounded-2xl border border-[#F8CAC7] flex items-center justify-between gap-2 shadow-2xs">
                           <div className="flex items-center gap-1.5 text-[11px] font-bold text-[#9B2C26]">
                             <AlertTriangle className="w-3.5 h-3.5 text-[#D95C55] shrink-0" />
-                            <span className="truncate max-w-[200px]">{activeMock.allergen_statement}</span>
+                            <span className="truncate max-w-[180px]">{activeMock.allergen_statement}</span>
                           </div>
                           <span className="text-[8px] font-black uppercase text-[#9B2C26] bg-white px-1.5 py-0.5 rounded border border-[#F8CAC7]">
                             Flagged
                           </span>
                         </div>
                       ) : (
-                        <div className="p-2.5 bg-[#EEF8DC] rounded-2xl border border-[#D7EDB2] flex items-center gap-1.5 text-[11px] font-bold text-[#174B38]">
+                        <div className="p-2.5 bg-[#EEF8DC] rounded-2xl border border-[#D7EDB2] flex items-center gap-1.5 text-[11px] font-bold text-[#174B38] shadow-2xs">
                           <CheckCircle2 className="w-3.5 h-3.5 text-[#174B38] shrink-0" />
                           <span>No allergen flags matched</span>
                         </div>
@@ -403,37 +408,37 @@ export const HomePage: React.FC = () => {
                 ) : (
                   <>
                     {/* Safety Dossier Mode */}
-                    <div className="space-y-2.5 bg-white p-3 rounded-2xl border border-[#E6E7E0]">
+                    <div className="space-y-2.5 bg-white p-3.5 rounded-2xl border border-[#E6E7E0] shadow-2xs">
                       <div className="flex items-center justify-between border-b border-[#E6E7E0] pb-2">
-                        <span className="text-[10px] font-bold text-[#78837B] uppercase tracking-wider">
+                        <span className="text-[10px] font-bold text-[#6E7972] uppercase tracking-wider">
                           Additive Dossier
                         </span>
                         <span className="text-[9px] font-bold text-[#174B38] bg-[#EEF8DC] px-2 py-0.5 rounded-md">
-                          Grounded in Codex & FSSAI
+                          Codex & FSSAI Aligned
                         </span>
                       </div>
 
                       <div className="space-y-1.5">
                         {activeMock.highlightAdditives.map((add, idx) => (
                           <div key={idx} className="p-2 rounded-xl bg-[#F8F8F2] border border-[#E6E7E0] text-[10px] flex items-center justify-between">
-                            <span className="font-bold text-[#202923]">{add}</span>
-                            <span className="text-[9px] text-[#78837B]">Verified Code</span>
+                            <span className="font-bold text-[#1D2620]">{add}</span>
+                            <span className="text-[9px] text-[#6E7972]">Verified Code</span>
                           </div>
                         ))}
                       </div>
 
                       <div className="p-2 bg-[#F8F8F2] rounded-xl border border-[#E6E7E0] text-[10px] flex items-center justify-between">
-                        <span className="text-[#78837B]">Nutrition Calorie Density</span>
+                        <span className="text-[#6E7972]">Calorie Density</span>
                         <strong className="text-[#174B38] font-bold">{activeMock.calories}</strong>
                       </div>
                     </div>
                   </>
                 )}
 
-                {/* Action button inside phone */}
+                {/* Primary Button Inside Phone */}
                 <button
                   onClick={() => handleTestSample(activeMock)}
-                  className="w-full py-2.5 bg-[#174B38] hover:bg-[#0F3527] text-white text-xs font-bold rounded-xl flex items-center justify-center gap-1.5 transition-all shadow-xs cursor-pointer"
+                  className="w-full py-3 bg-[#174B38] hover:bg-[#0E3326] text-white text-xs font-bold rounded-xl flex items-center justify-center gap-2 transition-all shadow-md active:scale-95 cursor-pointer"
                 >
                   <span>Evaluate Full Formulation</span>
                   <ArrowRight className="w-3.5 h-3.5 text-[#D7EDB2]" />
@@ -457,11 +462,11 @@ export const HomePage: React.FC = () => {
               <Zap className="w-4 h-4 text-[#174B38]" />
               <span>Instant Interactive Demos</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-black font-['Plus_Jakarta_Sans',sans-serif] text-[#174B38] tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#174B38] tracking-tight">
               Test Real Formulations in 1-Click
             </h2>
           </div>
-          <p className="text-xs text-[#78837B] max-w-md">
+          <p className="text-xs text-[#6E7972] max-w-md">
             Click any packaged product below to simulate an instant scan, analyze INS additive codes, and test the deterministic allergen engine:
           </p>
         </div>
@@ -470,7 +475,7 @@ export const HomePage: React.FC = () => {
           {sampleProducts.map((p, idx) => (
             <div
               key={idx}
-              className="bg-white p-7 rounded-3xl border border-[#E6E7E0] card-hover flex flex-col justify-between space-y-6 shadow-xs"
+              className="bg-white p-6 sm:p-7 rounded-3xl border border-[#E6E7E0] card-hover flex flex-col justify-between space-y-6 shadow-soft"
             >
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
@@ -483,14 +488,14 @@ export const HomePage: React.FC = () => {
                 </div>
 
                 <div>
-                  <h3 className="font-['Plus_Jakarta_Sans',sans-serif] font-black text-xl text-[#202923] leading-snug">
+                  <h3 className="font-extrabold text-xl text-[#1D2620] leading-snug">
                     {p.name}
                   </h3>
                 </div>
 
                 {/* Additive Highlight Chips */}
                 <div className="space-y-2">
-                  <span className="text-[10px] font-bold text-[#78837B] uppercase tracking-wider block">
+                  <span className="text-[10px] font-bold text-[#6E7972] uppercase tracking-wider block">
                     Key Declared Additives:
                   </span>
                   <div className="flex flex-wrap gap-1.5">
@@ -503,25 +508,25 @@ export const HomePage: React.FC = () => {
                 </div>
 
                 {/* Nutrition Row */}
-                <div className="flex items-center gap-3 text-xs text-[#78837B] pt-3 border-t border-[#E6E7E0]">
+                <div className="flex items-center gap-3 text-xs text-[#6E7972] pt-3 border-t border-[#E6E7E0]">
                   <span className="flex items-center gap-1">
                     <Flame className="w-3.5 h-3.5 text-[#E5A33A]" />
-                    <strong className="text-[#202923]">{p.calories}</strong>
+                    <strong className="text-[#1D2620]">{p.calories}</strong>
                   </span>
                   <span className="text-[#E6E7E0]">•</span>
                   <span className="flex items-center gap-1">
                     <Activity className="w-3.5 h-3.5 text-[#174B38]" />
-                    <strong className="text-[#202923]">{p.sodium}</strong> sodium
+                    <strong className="text-[#1D2620]">{p.sodium}</strong> sodium
                   </span>
                 </div>
               </div>
 
               <button
                 onClick={() => handleTestSample(p)}
-                className="w-full py-3.5 bg-[#174B38] hover:bg-[#0F3527] text-white text-xs font-['Plus_Jakarta_Sans',sans-serif] font-bold rounded-2xl flex items-center justify-center gap-2 transition-all duration-150 active:scale-95 shadow-xs cursor-pointer"
+                className="w-full py-3.5 px-4 bg-[#174B38] hover:bg-[#0E3326] text-white text-xs font-bold rounded-2xl flex items-center justify-center gap-2 transition-all duration-200 active:scale-98 shadow-sm hover:shadow-md cursor-pointer group"
               >
-                <span>Run Intelligence Analysis</span>
-                <ArrowRight className="w-4 h-4 text-[#D7EDB2]" />
+                <span>Run Formulation Analysis</span>
+                <ArrowRight className="w-4 h-4 text-[#D7EDB2] transition-transform duration-200 group-hover:translate-x-1" />
               </button>
             </div>
           ))}
@@ -531,36 +536,36 @@ export const HomePage: React.FC = () => {
       {/* ==========================================================================
           INTERACTIVE ADDITIVE DECRYPTER SANDBOX
           ========================================================================== */}
-      <section className="bg-white p-8 sm:p-12 rounded-3xl border border-[#E6E7E0] shadow-xs space-y-8">
+      <section className="bg-white p-6 sm:p-10 lg:p-12 rounded-3xl border border-[#E6E7E0] shadow-soft space-y-8">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
           <div>
             <div className="inline-flex items-center gap-2 bg-[#EEF8DC] px-3.5 py-1.5 rounded-full text-xs font-bold text-[#174B38] border border-[#D7EDB2] mb-2">
               <Sparkles className="w-3.5 h-3.5 text-[#174B38]" />
               <span>Live Ingredient Decrypter</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-black font-['Plus_Jakarta_Sans',sans-serif] text-[#174B38] tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#174B38] tracking-tight">
               Tap Any Additive to Reveal Its True Purpose
             </h2>
           </div>
-          <p className="text-xs text-[#78837B] max-w-md">
+          <p className="text-xs text-[#6E7972] max-w-md">
             Click any common additive below to inspect why food companies add it, what global health authorities decree, and its natural whole-food alternative:
           </p>
         </div>
 
         {/* Additive Selector Chips */}
-        <div className="flex flex-wrap gap-2.5">
+        <div className="flex flex-wrap gap-2.5 sm:gap-3 py-1">
           {decrypterAdditives.map((item, idx) => (
             <button
               key={idx}
               onClick={() => setSelectedDecrypter(idx)}
-              className={`px-4 py-2.5 rounded-2xl text-xs font-bold transition-all cursor-pointer flex items-center gap-2 ${
+              className={`px-4 py-2.5 rounded-2xl text-xs font-bold transition-all duration-200 cursor-pointer flex items-center gap-2 ${
                 selectedDecrypter === idx
-                  ? 'bg-[#174B38] text-white shadow-md'
-                  : 'bg-[#F8F8F2] hover:bg-[#EEF8DC] text-[#78837B] hover:text-[#174B38] border border-[#E6E7E0]'
+                  ? 'bg-[#174B38] text-[#D7EDB2] shadow-md border border-[#174B38] scale-[1.02]'
+                  : 'bg-[#F8F8F2] hover:bg-[#EEF8DC]/60 text-[#1D2620] hover:text-[#174B38] border border-[#E6E7E0]'
               }`}
             >
-              <span>{item.code}</span>
-              <span className="text-[10px] opacity-80 hidden sm:inline font-normal">({item.name.split(' ')[0]})</span>
+              <span className="font-mono font-bold">{item.code}</span>
+              <span className="text-[11px] opacity-80 hidden sm:inline font-normal">({item.name.split(' ')[0]})</span>
             </button>
           ))}
         </div>
@@ -569,18 +574,18 @@ export const HomePage: React.FC = () => {
         {(() => {
           const current = decrypterAdditives[selectedDecrypter];
           return (
-            <div className="bg-[#F8F8F2] p-6 sm:p-8 rounded-3xl border border-[#E6E7E0] space-y-6">
+            <div className="bg-white p-6 sm:p-8 rounded-3xl border border-[#E6E7E0] space-y-6 shadow-2xs">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#E6E7E0] pb-4">
                 <div>
                   <div className="flex items-center gap-2">
-                    <span className="text-xs font-black font-mono bg-[#174B38] text-white px-2.5 py-0.5 rounded-md">
+                    <span className="text-xs font-black font-mono bg-[#174B38] text-[#D7EDB2] px-2.5 py-0.5 rounded-md">
                       {current.code}
                     </span>
-                    <span className="text-xs font-semibold text-[#78837B]">
+                    <span className="text-xs font-semibold text-[#6E7972]">
                       {current.category}
                     </span>
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-black font-['Plus_Jakarta_Sans',sans-serif] text-[#202923] mt-1">
+                  <h3 className="text-xl sm:text-2xl font-extrabold text-[#1D2620] mt-1">
                     {current.name}
                   </h3>
                 </div>
@@ -590,50 +595,50 @@ export const HomePage: React.FC = () => {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-                <div className="bg-white p-4 rounded-2xl border border-[#E6E7E0] space-y-1">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#174B38]">
+                <div className="bg-[#F8F8F2] p-5 rounded-2xl border border-[#E6E7E0] space-y-1.5">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#174B38] block">
                     Why Manufacturers Add It:
                   </span>
-                  <p className="text-[#202923] leading-relaxed">
+                  <p className="text-[#1D2620] leading-relaxed">
                     {current.whyAdded}
                   </p>
                 </div>
 
-                <div className="bg-white p-4 rounded-2xl border border-[#E6E7E0] space-y-1">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#174B38]">
+                <div className="bg-[#F8F8F2] p-5 rounded-2xl border border-[#E6E7E0] space-y-1.5">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#174B38] block">
                     Global Safety Consensus:
                   </span>
-                  <p className="text-[#202923] leading-relaxed">
+                  <p className="text-[#1D2620] leading-relaxed">
                     {current.safetyConsensus}
                   </p>
                 </div>
 
-                <div className="bg-white p-4 rounded-2xl border border-[#E6E7E0] space-y-1">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#78837B]">
+                <div className="bg-[#F8F8F2] p-5 rounded-2xl border border-[#E6E7E0] space-y-1.5">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#6E7972] block">
                     Common Food Categories:
                   </span>
-                  <p className="text-[#78837B] leading-relaxed">
+                  <p className="text-[#6E7972] leading-relaxed">
                     {current.commonFoods}
                   </p>
                 </div>
 
-                <div className="bg-[#EEF8DC] p-4 rounded-2xl border border-[#D7EDB2] space-y-1">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#174B38]">
+                <div className="bg-[#EEF8DC] p-5 rounded-2xl border border-[#D7EDB2] space-y-1.5">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#174B38] block">
                     Whole-Food Clean Alternative:
                   </span>
-                  <p className="text-[#174B38] font-semibold leading-relaxed">
+                  <p className="text-[#174B38] font-bold leading-relaxed">
                     {current.wholeFoodAlt}
                   </p>
                 </div>
               </div>
 
               <div className="flex flex-wrap items-center justify-between gap-3 pt-2">
-                <span className="text-[11px] text-[#78837B]">
+                <span className="text-[11px] text-[#6E7972]">
                   Want complete 7-section chemical breakdowns and scientific study references?
                 </span>
                 <button
                   onClick={() => navigate('/explore')}
-                  className="text-xs font-bold text-[#174B38] hover:text-[#0F3527] flex items-center gap-1.5 underline cursor-pointer"
+                  className="text-xs font-bold text-[#174B38] hover:text-[#0E3326] flex items-center gap-1.5 underline cursor-pointer"
                 >
                   <span>Explore in Full Ingredient Directory</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -647,15 +652,15 @@ export const HomePage: React.FC = () => {
       {/* ==========================================================================
           VISUAL 4-STEP ZERO-HALLUCINATION PIPELINE
           ========================================================================== */}
-      <section className="bg-white p-8 sm:p-12 rounded-3xl border border-[#E6E7E0] shadow-xs space-y-10">
+      <section className="bg-white p-6 sm:p-10 lg:p-12 rounded-3xl border border-[#E6E7E0] shadow-soft space-y-10">
         <div className="text-center max-w-2xl mx-auto space-y-2">
           <span className="text-xs font-bold uppercase tracking-wider text-[#174B38] bg-[#EEF8DC] px-4 py-1.5 rounded-full border border-[#D7EDB2]">
             Zero-Hallucination Pipeline
           </span>
-          <h2 className="text-2xl sm:text-3xl font-black font-['Plus_Jakarta_Sans',sans-serif] text-[#174B38]">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#174B38]">
             How LifeLens Protects What You Eat
           </h2>
-          <p className="text-xs sm:text-sm text-[#78837B] leading-relaxed">
+          <p className="text-xs sm:text-sm text-[#6E7972] leading-relaxed">
             We bridge camera vision with deterministic food regulations before involving generative AI.
           </p>
         </div>
@@ -691,20 +696,20 @@ export const HomePage: React.FC = () => {
             return (
               <div
                 key={idx}
-                className="bg-[#F8F8F2] p-6 rounded-2xl border border-[#E6E7E0] space-y-3 relative group hover:border-[#D7EDB2] hover:bg-white transition-all shadow-2xs"
+                className="bg-[#F8F8F2] p-6 rounded-2xl border border-[#E6E7E0] space-y-3 relative group hover:border-[#D7EDB2] hover:bg-white transition-all shadow-2xs card-hover"
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-2xl font-black font-['Plus_Jakarta_Sans',sans-serif] text-[#64A77A]/40 group-hover:text-[#174B38] transition-colors">
+                  <span className="text-2xl font-black text-[#64A77A]/40 group-hover:text-[#174B38] transition-colors">
                     {item.step}
                   </span>
                   <div className="w-10 h-10 rounded-xl bg-white text-[#174B38] flex items-center justify-center border border-[#E6E7E0] shadow-2xs">
                     <Icon className="w-4 h-4 text-[#174B38]" />
                   </div>
                 </div>
-                <h4 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-sm text-[#202923]">
+                <h4 className="font-bold text-sm text-[#1D2620]">
                   {item.title}
                 </h4>
-                <p className="text-xs text-[#78837B] leading-relaxed">
+                <p className="text-xs text-[#6E7972] leading-relaxed">
                   {item.desc}
                 </p>
               </div>
@@ -717,38 +722,38 @@ export const HomePage: React.FC = () => {
           DEEP CAPABILITIES GRID
           ========================================================================== */}
       <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="bg-white p-7 rounded-3xl border border-[#E6E7E0] space-y-3 shadow-xs card-hover">
+        <div className="bg-white p-7 rounded-3xl border border-[#E6E7E0] space-y-3 shadow-soft card-hover">
           <div className="w-11 h-11 rounded-2xl bg-[#EEF8DC] flex items-center justify-center border border-[#D7EDB2]">
             <ShieldAlert className="w-5 h-5 text-[#174B38]" />
           </div>
-          <h3 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-lg text-[#202923]">
+          <h3 className="font-extrabold text-lg text-[#1D2620]">
             Deterministic Allergen Engine
           </h3>
-          <p className="text-xs text-[#78837B] leading-relaxed">
+          <p className="text-xs text-[#6E7972] leading-relaxed">
             Evaluates nested parentheticals, synonyms, and Indian terms (e.g. <em>Maida</em>, <em>Badam</em>, <em>Kaju</em>, <em>Anda</em>) against your personal profile. Distinguishes 4 exact regulatory states: Matched, Precautionary Warning, No Listed Match, and Unable to Verify.
           </p>
         </div>
 
-        <div className="bg-white p-7 rounded-3xl border border-[#E6E7E0] space-y-3 shadow-xs card-hover">
+        <div className="bg-white p-7 rounded-3xl border border-[#E6E7E0] space-y-3 shadow-soft card-hover">
           <div className="w-11 h-11 rounded-2xl bg-[#EEF8DC] flex items-center justify-center border border-[#D7EDB2]">
             <BookOpen className="w-5 h-5 text-[#174B38]" />
           </div>
-          <h3 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-lg text-[#202923]">
+          <h3 className="font-extrabold text-lg text-[#1D2620]">
             7-Section Chemical Explainer
           </h3>
-          <p className="text-xs text-[#78837B] leading-relaxed">
+          <p className="text-xs text-[#6E7972] leading-relaxed">
             Unpack any food chemical (e.g. <em>INS 621</em>, <em>INS 319</em>, <em>INS 211</em>) into 7 clear sections: Short Answer, What It Is, Why Added, Evidence, Concerns, What We Don&apos;t Know, and Sources.
           </p>
         </div>
 
-        <div className="bg-white p-7 rounded-3xl border border-[#E6E7E0] space-y-3 shadow-xs card-hover">
+        <div className="bg-white p-7 rounded-3xl border border-[#E6E7E0] space-y-3 shadow-soft card-hover">
           <div className="w-11 h-11 rounded-2xl bg-[#EEF8DC] flex items-center justify-center border border-[#D7EDB2]">
             <Sparkles className="w-5 h-5 text-[#174B38]" />
           </div>
-          <h3 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-lg text-[#202923]">
+          <h3 className="font-extrabold text-lg text-[#1D2620]">
             3-Language Voice & AI Chat
           </h3>
-          <p className="text-xs text-[#78837B] leading-relaxed">
+          <p className="text-xs text-[#6E7972] leading-relaxed">
             Converse via voice or text in <strong>English</strong>, <strong>हिन्दी</strong>, or <strong>తెలుగు</strong>. Audio responses use native device speech synthesis with zero voice recordings retained.
           </p>
         </div>
@@ -757,22 +762,22 @@ export const HomePage: React.FC = () => {
       {/* ==========================================================================
           SCIENTIFIC GROUNDING & INTEGRITY CHECKLIST
           ========================================================================== */}
-      <section className="bg-white p-8 sm:p-10 rounded-3xl border border-[#E6E7E0] space-y-6 shadow-xs">
+      <section className="bg-white p-6 sm:p-10 rounded-3xl border border-[#E6E7E0] space-y-6 shadow-soft">
         <div className="flex items-center gap-3">
           <div className="w-9 h-9 rounded-xl bg-[#174B38] text-white flex items-center justify-center shadow-xs">
             <ShieldCheck className="w-5 h-5 text-[#D7EDB2]" />
           </div>
           <div>
-            <h3 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-lg text-[#174B38]">
+            <h3 className="font-extrabold text-lg text-[#174B38]">
               Scientific Grounding & Integrity Standards
             </h3>
-            <p className="text-xs text-[#78837B]">
+            <p className="text-xs text-[#6E7972]">
               Strict algorithmic boundaries preventing generative hallucinations
             </p>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-[#78837B]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-[#6E7972]">
           <div className="space-y-3 bg-[#F8F8F2] p-5 rounded-2xl border border-[#E6E7E0]">
             <div className="flex items-start gap-2.5">
               <CheckCircle2 className="w-4 h-4 text-[#174B38] shrink-0 mt-0.5" />
@@ -800,16 +805,16 @@ export const HomePage: React.FC = () => {
       {/* ==========================================================================
           INTERACTIVE FAQ ACCORDION SECTION
           ========================================================================== */}
-      <section className="bg-white p-8 sm:p-12 rounded-3xl border border-[#E6E7E0] shadow-xs space-y-8">
+      <section className="bg-white p-6 sm:p-10 lg:p-12 rounded-3xl border border-[#E6E7E0] shadow-soft space-y-8">
         <div className="text-center max-w-2xl mx-auto space-y-2">
           <div className="inline-flex items-center gap-2 bg-[#EEF8DC] px-3.5 py-1.5 rounded-full text-xs font-bold text-[#174B38] border border-[#D7EDB2]">
             <HelpCircle className="w-3.5 h-3.5 text-[#174B38]" />
             <span>Answers & Clarity</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl font-black font-['Plus_Jakarta_Sans',sans-serif] text-[#174B38]">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#174B38]">
             Frequently Asked Questions
           </h2>
-          <p className="text-xs sm:text-sm text-[#78837B]">
+          <p className="text-xs sm:text-sm text-[#6E7972]">
             Evidence-based answers to how our food intelligence and allergen verification algorithms function.
           </p>
         </div>
@@ -824,13 +829,13 @@ export const HomePage: React.FC = () => {
               >
                 <button
                   onClick={() => setOpenFaq(isOpen ? null : idx)}
-                  className="w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-sm text-[#202923] hover:text-[#174B38] cursor-pointer"
+                  className="w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-sm text-[#1D2620] hover:text-[#174B38] cursor-pointer"
                 >
                   <span>{faq.q}</span>
-                  <ChevronDown className={`w-4 h-4 text-[#78837B] shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-180 text-[#174B38]' : ''}`} />
+                  <ChevronDown className={`w-4 h-4 text-[#6E7972] shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-180 text-[#174B38]' : ''}`} />
                 </button>
                 {isOpen && (
-                  <div className="px-5 pb-5 pt-1 text-xs text-[#78837B] leading-relaxed border-t border-[#E6E7E0]/60 bg-white">
+                  <div className="px-5 pb-5 pt-1 text-xs text-[#6E7972] leading-relaxed border-t border-[#E6E7E0]/60 bg-white">
                     {faq.a}
                   </div>
                 )}
@@ -843,12 +848,12 @@ export const HomePage: React.FC = () => {
       {/* ==========================================================================
           BOTTOM HIGH-IMPACT CTA BANNER
           ========================================================================== */}
-      <section className="relative overflow-hidden rounded-3xl bg-[#174B38] text-white p-8 sm:p-14 shadow-xl border border-[#216149] text-center space-y-6">
+      <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#123D2E] via-[#174B38] to-[#0E3326] text-white p-8 sm:p-14 shadow-floating border border-[#266850] text-center space-y-6">
         <div className="relative z-10 max-w-2xl mx-auto space-y-3">
           <span className="text-xs font-bold uppercase tracking-wider text-[#D7EDB2] bg-[#EEF8DC]/15 px-3.5 py-1.5 rounded-full border border-[#D7EDB2]/25 inline-block">
             Start Understanding Your Food Today
           </span>
-          <h2 className="text-3xl sm:text-4xl font-black font-['Plus_Jakarta_Sans',sans-serif] text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
             Ready to decode what you eat?
           </h2>
           <p className="text-xs sm:text-sm text-[#D7EDB2]/90 leading-relaxed font-normal">
@@ -857,14 +862,14 @@ export const HomePage: React.FC = () => {
           <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
             <button
               onClick={() => navigate('/scan')}
-              className="bg-[#D7EDB2] hover:bg-[#EEF8DC] text-[#174B38] font-['Plus_Jakarta_Sans',sans-serif] font-bold text-sm px-8 py-4 rounded-2xl shadow-md transition-all duration-150 active:scale-95 cursor-pointer flex items-center gap-2"
+              className="bg-[#D7EDB2] hover:bg-white text-[#174B38] font-extrabold text-sm px-8 py-4 rounded-2xl shadow-[0_4px_20px_rgba(215,237,178,0.35)] hover:shadow-[0_8px_28px_rgba(215,237,178,0.5)] transition-all duration-200 active:scale-95 cursor-pointer flex items-center gap-2"
             >
               <Camera className="w-5 h-5 text-[#174B38]" />
               <span>Launch SmartScan</span>
             </button>
             <button
               onClick={() => navigate('/chat')}
-              className="bg-white/10 hover:bg-white/15 text-white font-semibold text-sm px-7 py-4 rounded-2xl border border-white/20 transition-all cursor-pointer flex items-center gap-2"
+              className="bg-white/10 hover:bg-white/20 text-white font-bold text-sm px-7 py-4 rounded-2xl border border-white/20 transition-all duration-200 backdrop-blur-md cursor-pointer flex items-center gap-2 active:scale-95"
             >
               <MessageSquare className="w-4 h-4 text-[#D7EDB2]" />
               <span>Ask AI Food Assistant</span>

@@ -92,7 +92,7 @@ export const IngredientExplorerPage: React.FC = () => {
             <BookOpen className="w-3.5 h-3.5 text-[#174B38] shrink-0" />
             <span>Searchable Ingredient Research</span>
           </div>
-          <h1 className="text-3xl font-black font-['Plus_Jakarta_Sans',sans-serif] text-[#174B38] tracking-tight">
+          <h1 className="text-3xl font-black text-[#174B38] tracking-tight">
             Ingredient Explorer
           </h1>
           <p className="text-xs sm:text-sm text-[#78837B] leading-relaxed">
@@ -114,7 +114,7 @@ export const IngredientExplorerPage: React.FC = () => {
             <button
               type="submit"
               disabled={isLoading}
-              className="absolute right-2 bg-[#174B38] hover:bg-[#0F3527] text-white font-['Plus_Jakarta_Sans',sans-serif] font-bold text-xs px-6 py-2.5 rounded-xl shadow-xs transition-all active:scale-95 cursor-pointer"
+              className="absolute right-2 bg-[#174B38] hover:bg-[#0F3527] text-white font-bold text-xs px-6 py-2.5 rounded-xl shadow-xs transition-all active:scale-95 cursor-pointer"
             >
               <span>Explain</span>
             </button>
@@ -207,7 +207,7 @@ export const IngredientExplorerPage: React.FC = () => {
       {result && !result.found && (
         <div className="bg-white p-8 sm:p-10 rounded-3xl border border-[#E6E7E0] text-center space-y-3 shadow-xs">
           <AlertCircle className="w-10 h-10 text-[#E5A33A] mx-auto opacity-80" />
-          <h3 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-lg text-[#202923]">{result.message}</h3>
+          <h3 className="font-bold text-lg text-[#202923]">{result.message}</h3>
           <p className="text-xs text-[#78837B] max-w-md mx-auto leading-relaxed">{result.guidance}</p>
         </div>
       )}
@@ -225,7 +225,7 @@ export const IngredientExplorerPage: React.FC = () => {
                 {result.category}
               </span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-black font-['Plus_Jakarta_Sans',sans-serif] text-[#174B38] tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-black text-[#174B38] tracking-tight">
               {result.name}
             </h2>
           </div>

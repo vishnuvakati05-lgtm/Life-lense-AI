@@ -197,7 +197,7 @@ export const AIFoodChatPage: React.FC = () => {
             <Sparkles className="w-3.5 h-3.5 text-[#174B38]" />
             <span>AI Food Assistant</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-black font-['Plus_Jakarta_Sans',sans-serif] text-[#174B38] tracking-tight">
+          <h1 className="text-2xl sm:text-3xl font-black text-[#174B38] tracking-tight">
             Ask anything about your food.
           </h1>
           <p className="text-xs sm:text-sm text-[#78837B]">

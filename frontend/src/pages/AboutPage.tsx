@@ -25,7 +25,7 @@ export const AboutPage: React.FC = () => {
           <ShieldCheck className="w-3.5 h-3.5 text-[#174B38] shrink-0" />
           <span>Our Mission & Scientific Foundation</span>
         </div>
-        <h1 className="text-3xl sm:text-4xl font-black font-['Plus_Jakarta_Sans',sans-serif] text-[#174B38] tracking-tight">
+        <h1 className="text-3xl sm:text-4xl font-black text-[#174B38] tracking-tight">
           Know What&apos;s Inside.<br />Make Smarter Food Choices.
         </h1>
         <p className="text-sm sm:text-base text-[#78837B] leading-relaxed max-w-2xl font-normal">
@@ -39,7 +39,7 @@ export const AboutPage: React.FC = () => {
           <div className="w-10 h-10 rounded-2xl bg-[#EEF8DC] text-[#174B38] flex items-center justify-center font-bold">
             <CheckCircle2 className="w-5 h-5 text-[#174B38] shrink-0" />
           </div>
-          <h3 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-lg text-[#202923]">
+          <h3 className="font-bold text-lg text-[#202923]">
             Zero-Hallucination Core
           </h3>
           <p className="text-xs text-[#78837B] leading-relaxed">
@@ -51,7 +51,7 @@ export const AboutPage: React.FC = () => {
           <div className="w-10 h-10 rounded-2xl bg-[#EEF8DC] text-[#174B38] flex items-center justify-center font-bold">
             <Globe className="w-5 h-5 text-[#174B38] shrink-0" />
           </div>
-          <h3 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-lg text-[#202923]">
+          <h3 className="font-bold text-lg text-[#202923]">
             Trilingual Accessibility
           </h3>
           <p className="text-xs text-[#78837B] leading-relaxed">
@@ -63,7 +63,7 @@ export const AboutPage: React.FC = () => {
           <div className="w-10 h-10 rounded-2xl bg-[#EEF8DC] text-[#174B38] flex items-center justify-center font-bold">
             <HeartHandshake className="w-5 h-5 text-[#174B38] shrink-0" />
           </div>
-          <h3 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-lg text-[#202923]">
+          <h3 className="font-bold text-lg text-[#202923]">
             Consumer Privacy First
           </h3>
           <p className="text-xs text-[#78837B] leading-relaxed">
@@ -75,7 +75,7 @@ export const AboutPage: React.FC = () => {
       {/* Regulatory Standards Section */}
       <section className="bg-white p-8 sm:p-10 rounded-3xl border border-[#E6E7E0] space-y-6">
         <div className="space-y-1">
-          <h2 className="text-xl sm:text-2xl font-black font-['Plus_Jakarta_Sans',sans-serif] text-[#174B38]">
+          <h2 className="text-xl sm:text-2xl font-black text-[#174B38]">
             Cited Regulatory Authorities
           </h2>
           <p className="text-xs text-[#78837B]">

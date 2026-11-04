@@ -133,7 +133,7 @@ export const CompareFoodsPage: React.FC = () => {
           <Scale className="w-4 h-4 text-[#174B38] shrink-0" />
           <span>Product Comparison</span>
         </div>
-        <h1 className="text-2xl sm:text-3xl font-black font-['Plus_Jakarta_Sans',sans-serif] text-[#174B38] tracking-tight">
+        <h1 className="text-2xl sm:text-3xl font-black text-[#174B38] tracking-tight">
           Side-by-Side Formulation Battle
         </h1>
         <p className="text-xs sm:text-sm text-[#78837B] leading-relaxed max-w-xl">
@@ -164,7 +164,7 @@ export const CompareFoodsPage: React.FC = () => {
             <ArrowLeftRight className="w-5 h-5 text-[#D7EDB2]" />
           </div>
           <div>
-            <h3 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-sm text-white">
+            <h3 className="font-bold text-sm text-white">
               Sodium & Additive Differential
             </h3>
             <p className="text-xs text-[#D7EDB2] mt-0.5">
@@ -192,7 +192,7 @@ export const CompareFoodsPage: React.FC = () => {
               </span>
             </div>
 
-            <h2 className="font-['Plus_Jakarta_Sans',sans-serif] font-black text-xl text-[#202923]">{itemA.name}</h2>
+            <h2 className="font-black text-xl text-[#202923]">{itemA.name}</h2>
 
             <div className="space-y-2.5 pt-1 text-xs">
               <div className="flex justify-between py-1.5 border-b border-[#E6E7E0]">
@@ -247,7 +247,7 @@ export const CompareFoodsPage: React.FC = () => {
               </span>
             </div>
 
-            <h2 className="font-['Plus_Jakarta_Sans',sans-serif] font-black text-xl text-[#202923]">{itemB.name}</h2>
+            <h2 className="font-black text-xl text-[#202923]">{itemB.name}</h2>
 
             <div className="space-y-2.5 pt-1 text-xs">
               <div className="flex justify-between py-1.5 border-b border-[#E6E7E0]">

@@ -270,7 +270,7 @@ export const SmartScanPage: React.FC = () => {
               <Camera className="w-3.5 h-3.5 text-[#174B38]" />
               <span>SmartScan Vision Engine</span>
             </div>
-            <h1 className="text-2xl sm:text-3xl font-black font-['Plus_Jakarta_Sans',sans-serif] text-[#174B38] tracking-tight">
+            <h1 className="text-2xl sm:text-3xl font-black text-[#174B38] tracking-tight">
               Let&apos;s understand what&apos;s inside.
             </h1>
             <p className="text-xs sm:text-sm text-[#78837B]">
@@ -355,7 +355,7 @@ export const SmartScanPage: React.FC = () => {
             <Sparkles className="w-5 h-5 text-[#174B38] absolute inset-0 m-auto animate-pulse" />
           </div>
           <div className="space-y-1">
-            <h3 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-lg text-[#174B38]">
+            <h3 className="font-bold text-lg text-[#174B38]">
               Analyzing Packaging Evidence
             </h3>
             <p className="text-xs text-[#78837B] font-mono">{loadingStep}</p>
@@ -483,7 +483,7 @@ export const SmartScanPage: React.FC = () => {
           </div>
 
           <div className="max-w-md mx-auto space-y-1.5">
-            <h3 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-xl text-[#202923]">
+            <h3 className="font-bold text-xl text-[#202923]">
               Select Packaging Image
             </h3>
             <p className="text-xs text-[#78837B] leading-relaxed">
@@ -491,7 +491,7 @@ export const SmartScanPage: React.FC = () => {
             </p>
           </div>
 
-          <label className="inline-block bg-[#174B38] hover:bg-[#0F3527] text-white font-['Plus_Jakarta_Sans',sans-serif] font-bold text-xs px-8 py-3.5 rounded-2xl cursor-pointer shadow-xs transition-all active:scale-95">
+          <label className="inline-block bg-[#174B38] hover:bg-[#0F3527] text-white font-bold text-xs px-8 py-3.5 rounded-2xl cursor-pointer shadow-xs transition-all active:scale-95">
             <span>Choose from Device</span>
             <input
               type="file"
@@ -507,7 +507,7 @@ export const SmartScanPage: React.FC = () => {
       {/* MODE 3: BARCODE LOOKUP */}
       {mode === 'barcode' && !isLoading && (
         <div className="bg-white p-8 sm:p-10 rounded-3xl border border-[#E6E7E0] shadow-xs space-y-6">
-          <div className="flex items-center gap-3 text-[#174B38] font-['Plus_Jakarta_Sans',sans-serif] font-bold text-xl">
+          <div className="flex items-center gap-3 text-[#174B38] font-bold text-xl">
             <Barcode className="w-6 h-6 text-[#174B38] shrink-0" />
             <span>Search via Barcode (EAN / UPC)</span>
           </div>
@@ -547,7 +547,7 @@ export const SmartScanPage: React.FC = () => {
             <div>
               <div className="flex items-center gap-2">
                 <CheckCircle className="w-5 h-5 text-[#174B38] shrink-0" />
-                <h2 className="font-['Plus_Jakarta_Sans',sans-serif] font-black text-xl text-[#174B38]">
+                <h2 className="font-black text-xl text-[#174B38]">
                   Review & Verify Extracted Label
                 </h2>
               </div>

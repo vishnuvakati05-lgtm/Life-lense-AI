@@ -13,7 +13,7 @@ export const Footer: React.FC = () => {
               <div className="w-8 h-8 rounded-xl bg-[#174B38] text-white flex items-center justify-center font-bold shadow-xs">
                 <ShieldCheck className="w-4 h-4 text-[#D7EDB2] shrink-0" />
               </div>
-              <span className="font-['Plus_Jakarta_Sans',sans-serif] font-black text-lg text-[#174B38]">
+              <span className="font-black text-lg text-[#174B38]">
                 LifeLens AI
               </span>
             </div>
@@ -28,7 +28,7 @@ export const Footer: React.FC = () => {
 
           {/* Quick Navigation Links */}
           <div className="space-y-3">
-            <div className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-xs text-[#202923] uppercase tracking-wider">
+            <div className="font-bold text-xs text-[#202923] uppercase tracking-wider">
               Navigation
             </div>
             <div className="flex flex-col gap-2">
@@ -57,7 +57,7 @@ export const Footer: React.FC = () => {
 
           {/* Regulatory Badges */}
           <div className="space-y-3">
-            <div className="flex items-center gap-1.5 font-['Plus_Jakarta_Sans',sans-serif] font-bold text-xs text-[#202923] uppercase tracking-wider">
+            <div className="flex items-center gap-1.5 font-bold text-xs text-[#202923] uppercase tracking-wider">
               <CheckCircle2 className="w-3.5 h-3.5 text-[#174B38] shrink-0" />
               <span>Cited Regulatory Authorities</span>
             </div>
@@ -78,7 +78,7 @@ export const Footer: React.FC = () => {
 
           {/* Legal / Safety Note */}
           <div className="space-y-3">
-            <div className="flex items-center gap-1.5 font-['Plus_Jakarta_Sans',sans-serif] font-bold text-xs text-[#202923] uppercase tracking-wider">
+            <div className="flex items-center gap-1.5 font-bold text-xs text-[#202923] uppercase tracking-wider">
               <FileText className="w-3.5 h-3.5 text-[#174B38] shrink-0" />
               <span>Safety & Medical Disclaimer</span>
             </div>

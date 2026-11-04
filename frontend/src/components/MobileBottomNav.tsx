@@ -31,7 +31,7 @@ export const MobileBottomNav: React.FC = () => {
                 <div className="w-14 h-14 rounded-2xl bg-[#174B38] text-white flex items-center justify-center shadow-lg shadow-[#174B38]/30 border-4 border-[#F8F8F2] group-hover:scale-105 active:scale-95 transition-all duration-150">
                   <Icon className="w-6 h-6 text-[#D7EDB2]" />
                 </div>
-                <span className="text-[10px] font-bold text-[#174B38] mt-0.5 tracking-tight font-['Plus_Jakarta_Sans',sans-serif]">
+                <span className="text-[10px] font-bold text-[#174B38] mt-0.5 tracking-tight ">
                   {item.label}
                 </span>
               </Link>

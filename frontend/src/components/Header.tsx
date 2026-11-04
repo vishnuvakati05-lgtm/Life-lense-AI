@@ -2,19 +2,14 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import {
   Camera,
-  Home,
   BookOpen,
   MessageSquare,
   Scale,
-  History,
-  Settings,
   Globe,
   Volume2,
   Menu,
   X,
   Info,
-  Sparkles,
-  ArrowRight,
   User
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
@@ -26,7 +21,6 @@ export const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { path: '/', label: 'Home', icon: Home },
     { path: '/scan', label: 'SmartScan', icon: Camera },
     { path: '/explore', label: 'Ingredient Explorer', icon: BookOpen },
     { path: '/chat', label: 'AI Assistant', icon: MessageSquare },
@@ -46,13 +40,13 @@ export const Header: React.FC = () => {
         <div className="flex items-center justify-between h-20 gap-4">
           
           {/* Logo & Brand Identity */}
-          <Link to="/" className="flex items-center gap-2.5 shrink-0 group pl-1">
+          <Link to="/" className="flex items-center gap-2.5 shrink-0 group">
             <div className="w-10 h-10 rounded-2xl bg-[#174B38] text-white flex items-center justify-center shadow-xs transition-transform duration-200 group-hover:scale-105">
               <Camera className="w-5 h-5 text-[#D7EDB2]" />
             </div>
             <div>
               <div className="flex items-center gap-1.5">
-                <span className="text-xl sm:text-2xl font-black font-['Plus_Jakarta_Sans',sans-serif] tracking-tight text-[#174B38] leading-none">
+                <span className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#174B38] leading-none">
                   LifeLens
                 </span>
                 <span className="text-[10px] font-bold tracking-wider uppercase bg-[#EEF8DC] text-[#174B38] px-1.5 py-0.5 rounded-md border border-[#D7EDB2]">
@@ -74,13 +68,13 @@ export const Header: React.FC = () => {
                 <Link
                   key={item.path}
                   to={item.path}
-                  className={`px-3 py-1.5 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition-all duration-150 ${
+                  className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition-all duration-150 ${
                     isActive
                       ? 'bg-[#EEF8DC] text-[#174B38] font-bold shadow-2xs'
-                      : 'text-[#78837B] hover:text-[#202923] hover:bg-[#F8F8F2]'
+                      : 'text-[#6E7972] hover:text-[#1D2620] hover:bg-[#F8F8F2]'
                   }`}
                 >
-                  <Icon className={`w-3.5 h-3.5 shrink-0 ${isActive ? 'text-[#174B38]' : 'text-[#78837B]'}`} />
+                  <Icon className={`w-3.5 h-3.5 shrink-0 ${isActive ? 'text-[#174B38]' : 'text-[#6E7972]'}`} />
                   <span>{item.label}</span>
                 </Link>
               );
@@ -99,7 +93,7 @@ export const Header: React.FC = () => {
 
             {/* Language Switcher */}
             <div className="flex items-center bg-white p-1 rounded-2xl border border-[#E6E7E0] shadow-2xs gap-0.5">
-              <Globe className="w-3.5 h-3.5 text-[#78837B] ml-2 mr-1 hidden md:block shrink-0" />
+              <Globe className="w-3.5 h-3.5 text-[#6E7972] ml-2 mr-1 hidden md:block shrink-0" />
               {languages.map((l) => {
                 const isSelected = language === l.code;
                 return (
@@ -109,7 +103,7 @@ export const Header: React.FC = () => {
                     className={`px-2.5 py-1 text-xs font-bold rounded-xl transition-all duration-150 cursor-pointer ${
                       isSelected
                         ? 'bg-[#174B38] text-white shadow-2xs'
-                        : 'text-[#78837B] hover:text-[#202923] hover:bg-[#F8F8F2]'
+                        : 'text-[#6E7972] hover:text-[#1D2620] hover:bg-[#F8F8F2]'
                     }`}
                   >
                     {l.label}
@@ -126,16 +120,16 @@ export const Header: React.FC = () => {
                 setFontSize(sizes[nextIdx]);
               }}
               title="Toggle Font Size"
-              className="px-2.5 py-1.5 rounded-xl text-xs font-bold text-[#78837B] hover:text-[#202923] bg-white hover:bg-[#F8F8F2] border border-[#E6E7E0] transition-all shadow-2xs cursor-pointer"
+              className="px-2.5 py-1.5 rounded-xl text-xs font-bold text-[#6E7972] hover:text-[#1D2620] bg-white hover:bg-[#F8F8F2] border border-[#E6E7E0] transition-all shadow-2xs cursor-pointer"
             >
               <span className="font-mono font-bold">A{fontSize === 'large' ? '+' : fontSize === 'xlarge' ? '++' : ''}</span>
             </button>
 
-            {/* Sign in / Profile */}
+            {/* Profile & Allergy Settings */}
             <Link
               to="/settings"
               title="Profile & Allergy Settings"
-              className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold border border-[#E6E7E0] bg-white hover:bg-[#F8F8F2] text-[#202923] hover:text-[#174B38] transition-colors shadow-2xs ${
+              className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold border border-[#E6E7E0] bg-white hover:bg-[#F8F8F2] text-[#1D2620] hover:text-[#174B38] transition-colors shadow-2xs ${
                 location.pathname === '/settings' ? 'bg-[#EEF8DC] text-[#174B38] border-[#D7EDB2]' : ''
               }`}
             >
@@ -164,27 +158,31 @@ export const Header: React.FC = () => {
             </Link>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-xl border border-[#E6E7E0] bg-white text-[#202923] shadow-2xs cursor-pointer"
-              aria-label="Toggle navigation"
+              className="p-2 rounded-xl text-[#1D2620] hover:bg-[#F8F8F2] border border-[#E6E7E0] cursor-pointer"
+              aria-label="Toggle navigation menu"
             >
-              {mobileMenuOpen ? <X className="w-5 h-5 shrink-0" /> : <Menu className="w-5 h-5 shrink-0" />}
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="sm:hidden border-t border-[#E6E7E0] bg-white px-4 pt-3 pb-6 space-y-4 shadow-lg animate-fade-in">
-          <div className="flex items-center justify-between pb-2 border-b border-[#E6E7E0]">
-            <span className="text-xs font-bold text-[#78837B] uppercase tracking-wider">Select Language</span>
-            <div className="flex items-center gap-1 bg-[#F8F8F2] p-1 rounded-xl">
+        <div className="sm:hidden border-t border-[#E6E7E0] bg-[#F8F8F2]/98 backdrop-blur-lg px-4 pt-3 pb-6 space-y-4 animate-fade-in shadow-lg">
+          <div className="flex items-center justify-between pb-3 border-b border-[#E6E7E0]">
+            <span className="text-xs font-bold text-[#6E7972] uppercase tracking-wider">
+              Language
+            </span>
+            <div className="flex items-center gap-1 bg-white p-1 rounded-xl border border-[#E6E7E0]">
               {languages.map((l) => (
                 <button
                   key={l.code}
                   onClick={() => setLanguage(l.code)}
-                  className={`px-3 py-1 text-xs font-bold rounded-lg transition-all ${
-                    language === l.code ? 'bg-[#174B38] text-white' : 'text-[#78837B]'
+                  className={`px-3 py-1 text-xs font-bold rounded-lg ${
+                    language === l.code
+                      ? 'bg-[#174B38] text-white'
+                      : 'text-[#6E7972] hover:bg-[#F8F8F2]'
                   }`}
                 >
                   {l.label}
@@ -193,7 +191,7 @@ export const Header: React.FC = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 gap-1">
+          <div className="space-y-1">
             {navLinks.map((item) => {
               const isActive = location.pathname === item.path;
               const Icon = item.icon;
@@ -202,32 +200,24 @@ export const Header: React.FC = () => {
                   key={item.path}
                   to={item.path}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-semibold transition-all ${
+                  className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold transition-colors ${
                     isActive
-                      ? 'bg-[#EEF8DC] text-[#174B38] font-bold border border-[#D7EDB2]'
-                      : 'text-[#78837B] hover:bg-[#F8F8F2]'
+                      ? 'bg-[#EEF8DC] text-[#174B38] font-bold'
+                      : 'text-[#1D2620] hover:bg-white'
                   }`}
                 >
-                  <Icon className={`w-5 h-5 shrink-0 ${isActive ? 'text-[#174B38]' : 'text-[#78837B]'}`} />
+                  <Icon className={`w-4 h-4 ${isActive ? 'text-[#174B38]' : 'text-[#6E7972]'}`} />
                   <span>{item.label}</span>
                 </Link>
               );
             })}
             <Link
-              to="/history"
-              onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-semibold text-[#78837B] hover:bg-[#F8F8F2]"
-            >
-              <History className="w-5 h-5 text-[#78837B] shrink-0" />
-              <span>Scan History</span>
-            </Link>
-            <Link
               to="/settings"
               onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-semibold text-[#78837B] hover:bg-[#F8F8F2]"
+              className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold text-[#1D2620] hover:bg-white"
             >
-              <Settings className="w-5 h-5 text-[#78837B] shrink-0" />
-              <span>Profile & Allergy Preferences</span>
+              <User className="w-4 h-4 text-[#6E7972]" />
+              <span>Profile & Allergy Settings</span>
             </Link>
           </div>
         </div>

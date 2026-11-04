@@ -95,7 +95,7 @@ export const SettingsPage: React.FC = () => {
           <Settings className="w-4 h-4 text-[#174B38] shrink-0" />
           <span>Profile & Safety Preferences</span>
         </div>
-        <h1 className="text-2xl sm:text-3xl font-black font-['Plus_Jakarta_Sans',sans-serif] text-[#174B38] tracking-tight">
+        <h1 className="text-2xl sm:text-3xl font-black text-[#174B38] tracking-tight">
           Settings & Allergen Profile
         </h1>
         <p className="text-xs sm:text-sm text-[#78837B] leading-relaxed">
@@ -105,7 +105,7 @@ export const SettingsPage: React.FC = () => {
 
       {/* Language Section */}
       <section className="bg-white p-7 rounded-3xl border border-[#E6E7E0] shadow-xs space-y-4">
-        <div className="flex items-center gap-2 text-[#174B38] font-['Plus_Jakarta_Sans',sans-serif] font-bold text-lg">
+        <div className="flex items-center gap-2 text-[#174B38] font-bold text-lg">
           <Globe className="w-5 h-5 text-[#174B38] shrink-0" />
           <span>Primary App & Voice Language</span>
         </div>
@@ -127,7 +127,7 @@ export const SettingsPage: React.FC = () => {
                 }`}
               >
                 <div className="flex items-center justify-between">
-                  <span className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-base text-[#174B38]">
+                  <span className="font-bold text-base text-[#174B38]">
                     {l.label}
                   </span>
                   {isSelected && <Check className="w-4 h-4 text-[#174B38] shrink-0" />}
@@ -142,7 +142,7 @@ export const SettingsPage: React.FC = () => {
       {/* Personal Allergen Profile Checklist */}
       <section className="bg-white p-7 rounded-3xl border border-[#E6E7E0] shadow-xs space-y-5">
         <div className="space-y-1">
-          <div className="flex items-center gap-2 text-[#174B38] font-['Plus_Jakarta_Sans',sans-serif] font-bold text-lg">
+          <div className="flex items-center gap-2 text-[#174B38] font-bold text-lg">
             <ShieldCheck className="w-5 h-5 text-[#174B38] shrink-0" />
             <span>Personal Allergen Profile Checklist</span>
           </div>
@@ -229,7 +229,7 @@ export const SettingsPage: React.FC = () => {
 
       {/* Voice Synthesis Settings */}
       <section className="bg-white p-7 rounded-3xl border border-[#E6E7E0] shadow-xs space-y-4">
-        <div className="flex items-center gap-2 text-[#174B38] font-['Plus_Jakarta_Sans',sans-serif] font-bold text-lg">
+        <div className="flex items-center gap-2 text-[#174B38] font-bold text-lg">
           <Volume2 className="w-5 h-5 text-[#174B38] shrink-0" />
           <span>Text-to-Speech (TTS) Voice Configuration</span>
         </div>
@@ -262,7 +262,7 @@ export const SettingsPage: React.FC = () => {
 
       {/* Privacy & Data Clearance */}
       <section className="bg-white p-7 rounded-3xl border border-[#F8CAC7] space-y-3">
-        <div className="flex items-center gap-2 text-[#D95C55] font-['Plus_Jakarta_Sans',sans-serif] font-bold text-base">
+        <div className="flex items-center gap-2 text-[#D95C55] font-bold text-base">
           <AlertTriangle className="w-5 h-5 shrink-0" />
           <span>Local Privacy & Storage Management</span>
         </div>
