@@ -15,9 +15,9 @@ import { AboutPage } from './pages/AboutPage';
 
 export const App: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-[#F8F8F2] text-[#1D2620] font-body selection:bg-[#D7EDB2] selection:text-[#174B38]">
+    <div className="app-shell min-h-screen flex flex-col bg-[#F8F8F2] text-[#1D2620] font-body selection:bg-[#D7EDB2] selection:text-[#174B38]">
       <Header />
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-32 lg:pb-12">
+      <main className="app-content flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-5 sm:pt-7 pb-32 lg:pb-14">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/scan" element={<SmartScanPage />} />

@@ -14,8 +14,8 @@ export const MobileBottomNav: React.FC = () => {
   ];
 
   return (
-    <nav className="lg:hidden fixed bottom-2 left-3 right-3 z-50 pb-safe">
-      <div className="bg-white/95 backdrop-blur-2xl border border-[#E6E7E0] shadow-floating rounded-3xl px-3 py-2 flex items-center justify-around">
+    <nav className="mobile-bottom-nav lg:hidden fixed bottom-2 left-3 right-3 z-50 pb-safe" aria-label="Primary mobile navigation">
+      <div className="mobile-nav-shell px-2.5 py-2 flex items-center justify-around">
         {navItems.map((item) => {
           const isActive = location.pathname === item.path;
           const Icon = item.icon;

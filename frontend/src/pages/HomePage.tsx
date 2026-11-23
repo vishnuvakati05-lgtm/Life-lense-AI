@@ -766,12 +766,12 @@ export const HomePage: React.FC = () => {
       {/* ==========================================================================
           DEEP CAPABILITIES GRID
           ========================================================================== */}
-      <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="bg-white p-7 rounded-3xl border border-[#E6E7E0] space-y-3 shadow-soft card-hover">
+      <section className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5 sm:gap-6">
+        <div className="min-w-0 h-full bg-white p-6 sm:p-7 rounded-3xl border border-[#E6E7E0] space-y-3 shadow-soft card-hover">
           <div className="w-11 h-11 rounded-2xl bg-[#EEF8DC] flex items-center justify-center border border-[#D7EDB2]">
             <ShieldAlert className="w-5 h-5 text-[#174B38]" />
           </div>
-          <h3 className="font-extrabold text-lg text-[#1D2620]">
+          <h3 className="font-extrabold text-lg text-[#1D2620] leading-snug">
             Deterministic Allergen Engine
           </h3>
           <p className="text-xs text-[#6E7972] leading-relaxed">
@@ -779,11 +779,11 @@ export const HomePage: React.FC = () => {
           </p>
         </div>
 
-        <div className="bg-white p-7 rounded-3xl border border-[#E6E7E0] space-y-3 shadow-soft card-hover">
+        <div className="min-w-0 h-full bg-white p-6 sm:p-7 rounded-3xl border border-[#E6E7E0] space-y-3 shadow-soft card-hover">
           <div className="w-11 h-11 rounded-2xl bg-[#EEF8DC] flex items-center justify-center border border-[#D7EDB2]">
             <BookOpen className="w-5 h-5 text-[#174B38]" />
           </div>
-          <h3 className="font-extrabold text-lg text-[#1D2620]">
+          <h3 className="font-extrabold text-lg text-[#1D2620] leading-snug">
             7-Section Chemical Explainer
           </h3>
           <p className="text-xs text-[#6E7972] leading-relaxed">
@@ -791,11 +791,11 @@ export const HomePage: React.FC = () => {
           </p>
         </div>
 
-        <div className="bg-white p-7 rounded-3xl border border-[#E6E7E0] space-y-3 shadow-soft card-hover">
+        <div className="min-w-0 h-full bg-white p-6 sm:p-7 rounded-3xl border border-[#E6E7E0] space-y-3 shadow-soft card-hover">
           <div className="w-11 h-11 rounded-2xl bg-[#EEF8DC] flex items-center justify-center border border-[#D7EDB2]">
             <Sparkles className="w-5 h-5 text-[#174B38]" />
           </div>
-          <h3 className="font-extrabold text-lg text-[#1D2620]">
+          <h3 className="font-extrabold text-lg text-[#1D2620] leading-snug">
             3-Language Voice & AI Chat
           </h3>
           <p className="text-xs text-[#6E7972] leading-relaxed">

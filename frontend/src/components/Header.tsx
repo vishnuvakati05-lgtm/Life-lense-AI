@@ -35,13 +35,13 @@ export const Header: React.FC = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 pt-safe bg-[#F8F8F2]/95 backdrop-blur-md border-b border-[#E6E7E0] transition-all">
+    <header className="app-header sticky top-0 z-50 pt-safe">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20 gap-4">
+        <div className="flex items-center justify-between h-[72px] sm:h-20 gap-4">
           
           {/* Logo & Brand Identity */}
           <Link to="/" className="flex items-center gap-2.5 shrink-0 group">
-            <div className="w-10 h-10 rounded-2xl bg-[#174B38] text-white flex items-center justify-center shadow-xs transition-transform duration-200 group-hover:scale-105">
+            <div className="brand-mark w-10 h-10 rounded-[14px] bg-[#174B38] text-white flex items-center justify-center transition-transform duration-200 group-hover:scale-105">
               <Camera className="w-5 h-5 text-[#D7EDB2]" />
             </div>
             <div>
